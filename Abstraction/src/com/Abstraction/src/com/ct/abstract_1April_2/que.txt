@@ -1,0 +1,38 @@
+Assignment 02 :
+---------------
+creating a Java program to model different animal romes using abstract classes and subclasses. Follow the instructions below to complete the program:
+
+Start by defining an abstract class called Animal with an abstract method:
+
+roam(): This method should represent the roaming style of Animal.
+Create a subclass named Lion that extends the Animal class. Implement the roam() method to print:
+"Lion is roaming"
+
+Create another subclass named Dog that also extends the Animal class. Implement the roam() method to print:
+"Dog is roaming"
+
+In the ELC, Main class, write a main method to accomplish the following by using upcasting.
+
+Create an instance of the Lion class.
+Call the roam() method on the lion instance.
+Create an instance of the Dog class.
+Call the roam() method on the Dog instance.
+Ensure that your program output displays the unique roaming style of both the lion and the dog.
+
+After Execution add the following Methdos in the sub classes :
+
+Lion class :
+-------------
+public void roar() : Add this method in the Lion class to show the roaring behavior of Lion
+
+Dog class :
+-----------
+public void bark() : Add this method in Dog class to show the barking behavior of Dog class
+
+Take another static method in the ELC class
+Method name : getAnimal()
+return type : void
+Parameter type : Animal
+Modifiers : public, static
+
+In the body of getAnimal() method, call both the methods of Lion and Dog class.

@@ -1,0 +1,49 @@
+Assignment 01:
+--------------
+Define an abstract class 'Shape' with following specifications
+Methods:
+1. Name: getArea
+   ReturnType: double
+   Modifier: abstract
+2. Name: printDetails
+    ReturnType: double
+    Modifier: abstract
+Define sub-classes of Shape as Rectangle, Circle and Triangle that overrides the methods of Shape class
+Rectangle class
+Fields:
+	1. length - double
+	2. breadth - double
+Constructors:
+	A parametrized constructor the accepts and initializes length and breadth.
+Circle class
+Fields:
+	1. radius - double
+Constructors:
+	A parametrized constructor the accepts and initializes radius.
+Triangle class
+Fields:
+	1. base - double
+	2. height - double
+Constructors:
+	A parametrized constructor the accepts and initializes base and height.
+All the sub-classes of Shape should override the methods of the shape.
+getArea() should return the area of the respective shape.
+printDetails() should print the shape details as below
+	input:  Rectangle(30.3, 45.4)
+	output:
+		Type = Rectangle
+		Length = 30.3
+		Breadth = 45.4
+		Area = 1375.62
+	input: Circle(23.2)
+	output:
+		Type = Circle
+		Radius = 23.2
+		Area = 1690.0736
+	input: Triangle(146.2, 40.0);
+	output:
+		Type = Triangle
+		Base = 146.2
+		Height = 40.0
+		Area = 2924.0
+Given a class Testing with main method to test your code.
