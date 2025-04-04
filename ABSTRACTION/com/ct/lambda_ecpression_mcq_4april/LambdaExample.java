@@ -61,6 +61,8 @@ public class LambdaExample {
         StringOperation stringOp = s -> s.toUpperCase();
         System.out.println("Uppercase: " + stringOp.operate("lambda")); // Output: LAMBDA
 
-        //multi
+        // ---------- MULTI-ARG INT ----------
+        IntAdd sum = (a, b) -> a + b;
+        System.out.println("Sum of 10 and 20: " + sum.add(10, 20)); // Output: 30
     }
 }
