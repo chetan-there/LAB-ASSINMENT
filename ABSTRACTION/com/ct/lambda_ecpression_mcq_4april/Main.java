@@ -13,4 +13,20 @@ package com.ct.lambda_ecpression_mcq_4april;
 // }
 // }
 
+// Functional Interfaces
+
+@FunctionalInterface /* this is anotation which is use for ristrict the interface to write more than one abstract method */
+interface Car {
+    public void maruti();
+    
+}
+public class Main {
+    public static void main(String[] args) {
+        Car c= () -> System.err.println("hello i am maruti");
+     /*classname referancevariable = method without name it is anonymous mehtod -> // lambda then println . */
+        c.maruti();
+    }
+    
+}
+
 
