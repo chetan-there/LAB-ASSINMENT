@@ -1,0 +1,186 @@
+Let's analyze each question one by one, determine the output, and provide explanations.
+________________________________________
+1. Output of the following program
+interface Add {
+    int add(int b);
+}
+public class FunctionalInterface {
+    public static void main(String[] args) {
+        int a = 10;
+        Add add = (int b) -> b;
+        System.out.println(add.add(a));
+    }
+}
+Output:
+10
+Explanation:
+•	The interface Add has a single abstract method add(int b), making it a functional interface.
+•	A lambda expression (int b) -> b is used, which simply returns the input parameter b.
+•	add.add(a) is equivalent to add(10), which returns 10.
+________________________________________
+2. Output of the following program
+@FunctionalInterface
+interface Cube {
+    int cube(int b);
+}
+public class FunctionalInterface {
+    public static void main(String[] args) {
+        int a = 21;
+        Cube cube = b -> b*b*b;
+        System.out.println(cube.cube(a));
+    }
+}
+Output:
+9261
+Explanation:
+•	The functional interface Cube has a single method cube(int b).
+•	The lambda expression b -> b*b*b calculates the cube of b.
+•	cube.cube(21) computes 21*21*21 = 9261.
+________________________________________
+3. Output of the following program
+interface Add {
+    int add(int b);
+    int add(int a, int b);
+}
+public class FunctionalInterface {
+    public static void main(String[] args) {
+        int a = 21;
+        Add add = b -> b+b;
+        System.out.println(add.add(a));
+    }
+}
+Output:
+Compilation Error
+Explanation:
+•	The interface Add has two abstract methods, so it is not a functional interface.
+•	A lambda expression requires exactly one abstract method in the interface.
+•	Therefore, the compiler will throw an error.
+________________________________________
+4. Output of the following program
+@FunctionalInterface
+interface Str {
+    int methodStr(String str);
+}
+public class FunctionalInterface {
+    public static void main(String[] args) {
+        Str str = (String s) -> "2";
+        System.out.println(str.methodStr("2"));
+    }
+}
+Output:
+Compilation Error
+Explanation:
+•	The method methodStr returns int, but the lambda expression returns "2" (a String).
+•	There is a type mismatch error since a String cannot be assigned to an int.
+________________________________________
+5. Output of the following program
+public class FunctionalInterface {
+    public static void main(String[] args) {
+        String str -> str.compareTo("goolge");
+        System.out.println(str);
+    }
+}
+Output:
+Compilation Error
+Explanation:
+•	The syntax is incorrect for declaring a lambda expression.
+•	Lambda expressions should be inside a functional interface implementation.
+________________________________________
+6. Output of the following code
+@FunctionalInterface
+interface NIT {
+    String get(String nit);
+}
+public class FunctionalInterfaceExample {
+    public static void main(String[] args) {
+        NIT nit = (str) -> str + "Welcome to";
+        NIT nit1 = (str) -> str + "NARESHIT";
+        information("Hai ", nit);
+        information("Hai ", nit1);
+    }
+    public static void information(String str, NIT obj) {
+        String result = obj.get(str);
+        System.out.println(result);
+    }
+}
+Output:
+Hai Welcome to
+Hai NARESHIT
+Explanation:
+•	NIT is a functional interface with get(String nit).
+•	nit appends "Welcome to" to the input string.
+•	nit1 appends "NARESHIT" to the input string.
+•	The information() method calls get() and prints the results.
+________________________________________
+7. Is the following code correct?
+@FunctionalInterface
+interface NIT {
+    String myInterface(String a);
+    String newInterface();
+}
+Output:
+Compilation Error
+Explanation:
+•	A functional interface can have only one abstract method.
+•	Here, myInterface() and newInterface() both are abstract methods, violating the functional interface rule.
+________________________________________
+8. Output of the following code
+@FunctionalInterface
+interface NIT {
+    int square(int x);
+    default int add(int a, int b) { return a+b; }
+    default int sub(int a, int b) { return a-b; }
+    static int multiply(int a, int b) { return a*b; }
+    static int divide(int a, int b) { return a/b; }
+}
+public class FunctionalInterfaceExample implements NIT {
+    public static void main(String[] args) {
+        int a = 25, b = 5;
+        FunctionalInterfaceExample fun = new FunctionalInterfaceExample();
+        int add = fun.add(a, b);
+        int sub = fun.sub(a, b);
+        int mul = NIT.multiply(a, b);
+        int div = NIT.divide(a, b);
+        System.out.println(add + " " + sub + " " + mul + " " + div + " " + fun.square(6));
+    }
+    @Override
+    public int square(int x) { return x*x; }
+}
+Output:
+30 20 125 5 36
+Explanation:
+•	add(25, 5) = 30
+•	sub(25, 5) = 20
+•	multiply(25, 5) = 125
+•	divide(25, 5) = 5
+•	square(6) = 6*6 = 36
+________________________________________
+10. Output of the following code
+import java.util.function.Function;
+public class FunctionalInterfaceExample {
+    public static void main(String[] args) {
+        Function<String, String> fun = str -> str.substring(2,5);
+        System.out.println(fun.apply("Hyderabad"));
+    }
+}
+Output:
+der
+Explanation:
+•	"Hyderabad".substring(2,5) extracts the substring from index 2 to 4, which is "der".
+________________________________________
+20. Output of the following code
+import java.util.function.Consumer;
+public class Java8 {
+    public static void main(String[] args) {
+        Consumer<String> value = (a) -> System.out.println(a.toLowerCase());
+        value.accept("NareshIT");
+    }
+}
+Output:
+nareshit
+Explanation:
+•	Consumer<String> takes an input and does not return anything.
+•	The lambda expression converts "NareshIT" to lowercase.
+•	"NareshIT".toLowerCase() returns "nareshit", which is printed.
+________________________________________
+
