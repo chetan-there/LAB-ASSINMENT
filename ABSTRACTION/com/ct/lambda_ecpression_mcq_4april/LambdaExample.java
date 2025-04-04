@@ -64,5 +64,9 @@ public class LambdaExample {
         // ---------- MULTI-ARG INT ----------
         IntAdd sum = (a, b) -> a + b;
         System.out.println("Sum of 10 and 20: " + sum.add(10, 20)); // Output: 30
+
+        // ---------- MULTI-ARG STRING ----------
+        StringConcat sc = (a, b) -> a + " " + b;
+        System.out.println("Concatenation: " + sc.concat("Hello", "World")); // Output: Hello World
     }
 }
