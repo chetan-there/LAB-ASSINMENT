@@ -1,0 +1,162 @@
+Working with predefined functional interfaces :
+-----------------------------------------------
+In order to work with day to day programming and to write concise coding, java has provided predefined functional interafces which are available in java.util.function sub package.
+
+
+1) Predicate
+•	Use: To test a condition (returns true or false)
+•	Return Type: boolean
+// Traditional way
+Predicate<String> isLong = new Predicate<String>() {
+    public boolean test(String str) {
+        return str.length() > 5;
+    }
+};
+
+// Lambda way
+Predicate<String> isLong = str -> str.length() > 5;
+________________________________________
+2) Consumer
+•	Use: Performs an operation on a single input, no return
+•	Return Type: void
+// Traditional way
+Consumer<String> print = new Consumer<String>() {
+    public void accept(String str) {
+        System.out.println(str);
+    }
+};
+
+// Lambda way
+Consumer<String> print = str -> System.out.println(str);
+________________________________________
+3) Function<T, R>
+•	Use: Takes input of type T, returns result of type R
+•	Return Type: R
+// Traditional way
+Function<String, Integer> getLength = new Function<String, Integer>() {
+    public Integer apply(String str) {
+        return str.length();
+    }
+};
+
+// Lambda way
+Function<String, Integer> getLength = str -> str.length();
+________________________________________
+4) Supplier
+•	Use: Supplies a result without input
+•	Return Type: T
+// Traditional way
+Supplier<String> supply = new Supplier<String>() {
+    public String get() {
+        return "Hello";
+    }
+};
+
+// Lambda way
+Supplier<String> supply = () -> "Hello";
+________________________________________
+5) BiPredicate<T, U>
+•	Use: Test condition with two inputs
+•	Return Type: boolean
+// Traditional way
+BiPredicate<Integer, Integer> isSumEven = new BiPredicate<Integer, Integer>() {
+    public boolean test(Integer a, Integer b) {
+        return (a + b) % 2 == 0;
+    }
+};
+
+// Lambda way
+BiPredicate<Integer, Integer> isSumEven = (a, b) -> (a + b) % 2 == 0;
+________________________________________
+6) BiConsumer<T, U>
+•	Use: Takes two inputs and performs action, no return
+•	Return Type: void
+// Traditional way
+BiConsumer<String, Integer> printData = new BiConsumer<String, Integer>() {
+    public void accept(String name, Integer age) {
+        System.out.println(name + " is " + age + " years old.");
+    }
+};
+
+// Lambda way
+BiConsumer<String, Integer> printData = (name, age) -> System.out.println(name + " is " + age + " years old.");
+________________________________________
+7) BiFunction<T, U, R>
+•	Use: Takes two inputs, returns one output
+•	Return Type: R
+// Traditional way
+BiFunction<Integer, Integer, Integer> add = new BiFunction<Integer, Integer, Integer>() {
+    public Integer apply(Integer a, Integer b) {
+        return a + b;
+    }
+};
+
+// Lambda way
+BiFunction<Integer, Integer, Integer> add = (a, b) -> a + b;
+________________________________________
+8) UnaryOperator
+•	Use: Like Function<T, T> (same input and output)
+•	Return Type: T
+// Traditional way
+UnaryOperator<String> toUpper = new UnaryOperator<String>() {
+    public String apply(String str) {
+        return str.toUpperCase();
+    }
+};
+
+// Lambda way
+UnaryOperator<String> toUpper = str -> str.toUpperCase();
+________________________________________
+9) BinaryOperator
+•	Use: Like BiFunction<T, T, T> (same type for both inputs and output)
+•	Return Type: T
+// Traditional way
+BinaryOperator<Integer> multiply = new BinaryOperator<Integer>() {
+    public Integer apply(Integer a, Integer b) {
+        return a * b;
+    }
+};
+
+// Lambda way
+BinaryOperator<Integer> multiply = (a, b) -> a * b;
+________________________________________
+10) ToIntFunction
+•	Use: Takes T, returns int
+•	Return Type: int
+// Traditional way
+ToIntFunction<String> length = new ToIntFunction<String>() {
+    public int applyAsInt(String str) {
+        return str.length();
+    }
+};
+
+// Lambda way
+ToIntFunction<String> length = str -> str.length();
+________________________________________
+11) ToLongFunction
+•	Use: Takes T, returns long
+•	Return Type: long
+// Traditional way
+ToLongFunction<String> lengthLong = new ToLongFunction<String>() {
+    public long applyAsLong(String str) {
+        return str.length();
+    }
+};
+
+// Lambda way
+ToLongFunction<String> lengthLong = str -> str.length();
+________________________________________
+12) ToDoubleFunction
+•	Use: Takes T, returns double
+•	Return Type: double
+// Traditional way
+ToDoubleFunction<String> toDouble = new ToDoubleFunction<String>() {
+    public double applyAsDouble(String str) {
+        return Double.parseDouble(str);
+    }
+};
+
+// Lambda way
+ToDoubleFunction<String> toDouble = str -> Double.parseDouble(str);
+________________________________________
+
