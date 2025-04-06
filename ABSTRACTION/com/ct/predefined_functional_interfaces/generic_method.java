@@ -12,7 +12,7 @@ class Box<T> {
     }
 }
 
-public class Type_parameter {
+public class generic_method {
     public static void main(String[] args) {
         Box<Integer> intBox = new Box<>();
         intBox.setValue(10);
