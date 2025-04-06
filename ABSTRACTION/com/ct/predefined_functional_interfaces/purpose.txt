@@ -1,0 +1,100 @@
+•	🔹 What it does (Working)
+•	🔁 Return Type
+•	🎯 Purpose / When to use
+•	💡 Example Use Case
+________________________________________
+✅ 1) Predicate<T>
+
+•	🔹 Working: Tests a condition on an object of type T.
+•	🔁 Returns: boolean (true or false)
+•	🎯 Purpose: Used in filtering elements (e.g., streams, lists).
+•	💡 Use Case: Check if a number is even, or if a string starts with a letter.
+Predicate<Integer> isEven = x -> x % 2 == 0;
+________________________________________
+✅ 2) Consumer<T>
+
+•	🔹 Working: Performs an operation on a single input of type T, like printing or saving.
+•	🔁 Returns: void (doesn’t return anything)
+•	🎯 Purpose: Used for displaying or performing side effects (like printing).
+•	💡 Use Case: Print a message, log data, send values to a UI component.
+Consumer<String> print = s -> System.out.println(s);
+________________________________________
+✅ 3) Function<T, R>
+
+•	🔹 Working: Accepts an input of type T and returns a result of type R.
+•	🔁 Returns: A transformed or computed value of type R
+•	🎯 Purpose: Useful in mapping or converting one object to another.
+•	💡 Use Case: Convert String to Integer, multiply a number by 2, etc.
+Function<String, Integer> length = s -> s.length();
+________________________________________
+✅ 4) Supplier<T>
+
+•	🔹 Working: Supplies or generates a value of type T without taking any input.
+•	🔁 Returns: A value of type T
+•	🎯 Purpose: Used to produce values lazily or dynamically.
+•	💡 Use Case: Generate a random number, current time, a default object, etc.
+Supplier<String> greet = () -> "Hello!";
+________________________________________
+✅ 5) BiPredicate<T, U>
+
+•	🔹 Working: Tests a condition on two input values of type T and U.
+•	🔁 Returns: boolean
+•	🎯 Purpose: Used in comparisons involving two values.
+•	💡 Use Case: Check if a > b, or if a string starts with another.
+BiPredicate<Integer, Integer> greater = (a, b) -> a > b;
+________________________________________
+✅ 6) BiConsumer<T, U>
+
+•	🔹 Working: Performs an operation on two input values.
+•	🔁 Returns: void
+•	🎯 Purpose: To act on two values — typically for logging, processing pairs.
+•	💡 Use Case: Display name and age, key-value pair printing.
+BiConsumer<String, Integer> printInfo = (name, age) -> System.out.println(name + " is " + age);
+________________________________________
+✅ 7) BiFunction<T, U, R>
+
+•	🔹 Working: Accepts two inputs and returns one output.
+•	🔁 Returns: A value of type R
+•	🎯 Purpose: Combine or process two inputs into a result.
+•	💡 Use Case: Add two numbers, concatenate two strings.
+BiFunction<Integer, Integer, Integer> add = (a, b) -> a + b;
+________________________________________
+✅ 8) UnaryOperator<T>
+
+•	🔹 Working: A Function<T, T> that takes one value and returns a result of the same type.
+•	🔁 Returns: Same type as input (T)
+•	🎯 Purpose: Perform a transformation like square, increment, or conversion on the same type.
+•	💡 Use Case: Square a number, convert string to uppercase.
+UnaryOperator<Integer> square = x -> x * x;
+________________________________________
+✅ 9) BinaryOperator<T>
+
+•	🔹 Working: A BiFunction<T, T, T> that operates on two values of the same type and returns the same type.
+•	🔁 Returns: Type T
+•	🎯 Purpose: Combine or process two values of the same type.
+•	💡 Use Case: Sum, multiply, or concatenate strings.
+BinaryOperator<Integer> multiply = (a, b) -> a * b;
+________________________________________
+✅ 10) ToIntFunction<T>
+
+•	🔹 Working: Takes a value of type T, returns an int.
+•	🔁 Returns: int
+•	🎯 Purpose: Extract or convert a value to an integer.
+•	💡 Use Case: Get string length, object’s numeric field, etc.
+ToIntFunction<String> length = s -> s.length();
+________________________________________
+✅ 11) ToLongFunction<T>
+
+•	🔹 Working: Takes a value of type T, returns a long.
+•	🔁 Returns: long
+•	🎯 Purpose: Extract long value from object or calculate long values.
+•	💡 Use Case: Square a number, return timestamp.
+ToLongFunction<Integer> square = x -> (long)x * x;
+________________________________________
+✅ 12) ToDoubleFunction<T>
+
+•	🔹 Working: Takes a value of type T, returns a double.
+•	🔁 Returns: double
+•	🎯 Purpose: Convert a value to a double for precise calculations.
+•	💡 Use Case: Half a number, convert Celsius to Fahrenheit.
+ToDoubleFunction<Integer> half = x -> x / 2.0;
