@@ -1,0 +1,38 @@
+📘 Rules for Type Parameters in Java Generics
+
+✅ 1. Declaration Rule
+•	Type parameters are declared inside angle brackets < >.
+class Box<T> { } // T is the type parameter
+________________________________________
+✅ 2. Naming Conventions (Not Strict but Standard)
+Symbol	Meaning
+T	Type
+E	Element (in collections)
+K	Key
+V	Value
+N	Number
+________________________________________
+✅ 3. Type Parameter Can Be Used as Any Type
+•	You can use it as method parameters, return types, or inside the class.
+T data;
+T getValue() { return data; }
+________________________________________
+✅ 4. You Can Declare Multiple Type Parameters
+class Pair<K, V> {
+    K key;
+    V value;
+}
+________________________________________
+✅ 5. You Can Set Bounds (Restricted Types)
+class Calc<T extends Number> { } // T must be a subclass of Number
+________________________________________
+✅ 6. Wildcards for Flexibility
+•	Use ? as a wildcard to allow any type:
+List<?> list = new ArrayList<Integer>();
+________________________________________
+✅ 7. Type Erasure Happens at Compile-Time
+•	Type parameters are removed during compilation.
+•	No generics info is available at runtime (due to Type Erasure).
+________________________________________
+Would you like examples for each rule? I can turn this into a mini notebook for revision if you’d like!
+
