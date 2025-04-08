@@ -2,7 +2,7 @@ package com.ct.MCQ;
 
 interface NIT
 {
-	String myInterface(String a);
+	void myInterface(String a);
 }
 public class Java8 {
 	

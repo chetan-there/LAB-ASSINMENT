@@ -78,6 +78,21 @@ public class Java8 {
 	}
 }
 
+answer ==> ❌ Compilation Error:
+This code will not compile due to the following reason:
+
+✅ In interfaces (before Java 8), all methods are either abstract or default/static.
+
+❌ In your code, defalutFunction() is not marked as default. It is written like a normal method, which is not allowed in interfaces unless it is:
+
+marked as default
+
+or marked as static
+
+or it is abstract (i.e., declared only, without a body)
+
+
+
 6.What is the output of the following code?
 interface NIT
 {
@@ -361,3 +376,5 @@ public class Java8 {
 		nit.myInterface("NIT");
 	}
 }
+
+answer ==> Welcome to NIT
