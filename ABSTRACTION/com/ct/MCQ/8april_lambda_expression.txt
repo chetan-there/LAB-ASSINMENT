@@ -323,6 +323,7 @@ answer ==> it will give compile time error bcoz we did't give proper parameter a
 
 
 19.What is the output of the following code?
+
 interface NIT
 {
 	String myInterface(String a);
@@ -344,6 +345,9 @@ public class Java8 {
 		System.out.println(nit.myInterface("NIT"));
 	}
 }
+
+answer ==> Error: Calculate cannot be resolved to a type
+
 
 20.What is the output of the following code?
 interface NIT
