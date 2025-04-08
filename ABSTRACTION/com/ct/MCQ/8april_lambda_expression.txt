@@ -345,6 +345,8 @@ public class Java8 {
 	}
 }
 
+answer ==>Cannot return a void result
+
 21.What is the output of the following code?
 interface NIT
 {
