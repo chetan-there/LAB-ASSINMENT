@@ -302,6 +302,11 @@ public class Java8 {
 	}
 }  
 
+
+answer ==> it will give compile time error bcoz we did't give proper parameter as per method 
+            if we write parameter then output will be NIT
+
+
 19.What is the output of the following code?
 interface NIT
 {
