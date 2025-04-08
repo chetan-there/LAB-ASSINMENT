@@ -1,4 +1,4 @@
-package com.ct.lambda_ecpression_mcq_4april;
+package com.ct.lambda_ecpression_4april;
 
 // Lambda Expressions
 
