@@ -1,0 +1,52 @@
+✅ What is the purpose of using Predicate as a parameter?
+👉 Predicate allows you to pass logic (conditions) as an argument to a method.
+This makes your method more flexible and reusable, because you can pass any condition (e.g., even check, positive check, etc.) without changing the method.
+________________________________________
+🔹 Mini Code Example (Refresher)
+import java.util.function.Predicate;
+
+public class PredicateExample {
+
+    // ✅ 1. Method that accepts a Predicate as parameter
+    static void checkNumber(int num, Predicate<Integer> condition) {
+        if (condition.test(num)) {
+            System.out.println(num + " passed the check.");
+        } else {
+            System.out.println(num + " failed the check.");
+        }
+    }
+
+    public static void main(String[] args) {
+        // ✅ 2. Pass different logic (lambda) to the same method
+
+        checkNumber(10, n -> n % 2 == 0);   // Check even
+        checkNumber(5, n -> n > 0);         // Check positive
+        checkNumber(-1, n -> n < 0);        // Check negative
+    }
+}
+________________________________________
+✅ 📘 Explanation Using Java Commands Format
+🔢 Step	🔧 Code Part	📘 What It Does
+1️⃣	Predicate<Integer> condition	This is a parameter that accepts a lambda expression (logic)
+2️⃣	condition.test(num)	Executes the logic you passed on the given number
+3️⃣	n -> n % 2 == 0	This is the lambda expression for checking if a number is even
+4️⃣	checkNumber(10, ...)	Calls the method and passes a new condition (behavior)
+5️⃣	✅/❌ based on condition	Method prints result based on whether condition returns true or false
+________________________________________
+🔥 Real-World Analogy:
+•	✅ You built a universal scanner (method)
+•	🧠 The scan condition (predicate) is passed at runtime:
+o	“Check if even”
+o	“Check if positive”
+o	“Check if greater than 100”
+•	🔁 This way, you don't rewrite the method every time you want to check something new.
+________________________________________
+✅ Benefits of Using Predicate as Parameter
+✅ Advantage	📘 Meaning
+Flexibility	One method can work with multiple conditions
+Reusability	Don’t write new methods for every rule
+Clean Code	Just pass logic as lambda
+Supports Functional Programming	Behavior is passed like a variable
+________________________________________
+Would you like a similar command-style breakdown for Function, Consumer, or Supplier next?
+
