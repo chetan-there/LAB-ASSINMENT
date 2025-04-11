@@ -1,0 +1,144 @@
+Create a Java program that demonstrates the usage of the Predicate interface to test if a number is even or prime. Your task is to implement a method testPredicate in the NumberTester class that tests a given number against a provided predicate.
+
+NumberTester Class(ELC):
+
+In the main method:
+Define two predicates:
+isEven: Checks if a given number is even.
+isPrime: Checks if a given number is prime.
+
+Take an integer number by using Scanner class and verify whether the given number is even OR prime by using Predicate.
+
+Test each predicate using the testPredicate method and print the result indicating whether the number satisfies each predicate.
+
+Test Cases:
+
+Test Case 1:
+Input: 13
+Output:
+Is 13 even? false
+Is 13 prime? true
+
+Test Case 2:
+Input: 5
+Output:
+Is 5 even? false
+Is 5 prime? true
+
+Test Case 3:
+Input: 20
+Output:
+Is 20 even? true
+Is 20 prime? false
+
+Assignment - 2
+--------------
+Create a Java program that demonstrates the usage of the Consumer interface to perform various operations on a given integer and string value. Your task is to define and use consumers to modify and display these values.
+
+ValueModifier class (ELC) :
+
+Instructions:
+Inside the main method, define two consumers:
+
+stringConsumer: Converts the string to uppercase and prints it.
+integerConsumer: Squares the integer value and prints it.
+
+Define a sample string value (e.g., "hello") and an integer value (e.g., 3).
+
+Use each consumer to perform the corresponding operation on the sample values by taking the value from Scanner class and print the results.
+
+Test Cases:
+Test Case 1:
+
+Input: "world", 5
+Output:
+Original string: world
+Original integer: 5
+After converting string to uppercase: WORLD
+After squaring the integer: 25
+
+Test Case 2:
+Input: "java", 7
+Output:
+Original string: java
+Original integer: 7
+After converting string to uppercase: JAVA
+After squaring the integer: 49
+
+Test Case 3:
+Input: "example", 4
+Output:
+Original string: example
+Original integer: 4
+After converting string to uppercase: EXAMPLE
+After squaring the integer: 16
+
+Assignment - 3
+--------------
+Design a Java program that utilizes the Function interface within the main method to perform operations on both strings and integers. Implement two functions for string operations: calculating the string length and formatting an integer division result. Your task is to implement these operations inline within the main method using lambda expressions.
+
+FunctionApplier class(ELC):
+
+Requirements:
+Main Method:
+
+Define two lambda expressions by using Function<-,->:
+getStringLength: Computes and returns the length of the input string.
+divideAndFormat: Takes an integer input, divides it by 2.0, and returns the formatted result as a double.
+
+Print the results by calling the functions.
+
+Test Case 1:
+
+Input:
+String testString = "Hello";
+int testInteger = 10;
+Output:
+String length of "Hello": 5
+Result of dividing 10 by 2: 5.0
+
+Test Case 2:
+Input:
+String testString = "Java Programming";
+int testInteger = 15;
+Output:
+String length of "Java Programming": 17
+Result of dividing 15 by 2: 7.5
+
+Test Case 3:
+
+Input:
+String testString = "";
+int testInteger = 8;
+
+Output:
+String length of "": 0
+Result of dividing 8 by 2: 4.0
+
+Assignment - 4
+--------------
+Create a Java program using the Supplier interface to generate random passwords. The password should be 8 characters long.
+
+Contain a mix of uppercase letters, lowercase letters, digits, and special characters (e.g., @, #, $, !).
+
+Coding  Requirements:
+Create a PasswordGenerator class.
+
+Inside the main method :
+
+Define character sets [For password generation as shown below]
+
+ String upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+ String lower = "abcdefghijklmnopqrstuvwxyz";
+ String digits = "0123456789";
+ String special = "@#$%!&*";
+
+Combine all the character set into a single String
+
+Define a Supplier<String> named passwordSupplier which will generate and return a Random Password (Using all character set) by using java.util.Random class.
+
+Use this supplier to generate and print a random secure password.
+
+Output :
+
+Generated Password: Ab3#eT9!

@@ -1,0 +1,20 @@
+How to generate a random Number :
+-----------------------------------------------------------
+*There a predefined class called Random available in java.util package.
+
+* It contans a predefined non static method called nextInt(int bound)
+  the return type of this method is integer
+* In this method we cannot pass 0(zero) OR -ve value oterwise we will
+  get java.lang.IllegalArgumentException
+
+  Program to generate random number in between 0 to 99
+  public class Comparison {
+
+    public static void main(String[] args)
+    {
+        Random random = new Random();
+        int val = random.nextInt(100); // 0 to 99
+        System.out.println(val);
+    }
+
+}
