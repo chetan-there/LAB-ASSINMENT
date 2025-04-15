@@ -1,4 +1,4 @@
-package com.ct.EH_day2;
+package com.ct.EH_Day2;
 
 import java.util.Scanner;
 
@@ -28,4 +28,3 @@ public class DivisionExample {
 		sc.close();
 		}
 }
-s

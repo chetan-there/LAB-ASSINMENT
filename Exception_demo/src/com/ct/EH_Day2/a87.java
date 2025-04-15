@@ -1,4 +1,4 @@
-package com.ct.EH_day2;
+package com.ct.EH_Day2;
 
 public class a87 {
 	  public static void main(String[] argv) {
