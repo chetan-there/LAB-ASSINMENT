@@ -55,3 +55,33 @@ java.lang.ClassCastException: java.lang.Boolean cannot be cast to java.lang.Stri
     at ClassCastExceptionDemo.main(ClassCastExceptionDemo.java:26)
 Casting successful: Java
 
+*This is for 3 test case 
+
+Object[] names = {"hello", 123, "java"};
+try {
+    System.out.println("Casting successful: "+(String)names[0]);
+    // for(int i =0 ; i < names.length ; i++){
+    //     String s = (String) names[i];
+    //     System.out.println("Casting successful: "+s);
+    // }
+} catch (Exception e) {
+    e.printStackTrace();
+}
+try {
+    System.out.println("Casting successful: "+(String)names[1]);
+    // for(int i =0 ; i < names.length ; i++){
+    //     String s = (String) names[i];
+    //     System.out.println("Casting successful: "+s);
+    // }
+} catch (Exception e) {
+    e.printStackTrace();
+}
+try {
+    System.out.println("Casting successful: "+(String)names[2]);
+    // for(int i =0 ; i < names.length ; i++){
+    //     String s = (String) names[i];
+    //     System.out.println("Casting successful: "+s);
+    // }
+} catch (Exception e) {
+    e.printStackTrace();
+}
