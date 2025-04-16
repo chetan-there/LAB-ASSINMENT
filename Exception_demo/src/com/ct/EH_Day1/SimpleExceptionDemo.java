@@ -21,7 +21,7 @@ public class SimpleExceptionDemo {
 				System.out.println(e+"null");
 				e.printStackTrace();
 			}			
-
+			
 	}
 }
 	

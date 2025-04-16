@@ -30,7 +30,7 @@ public class ExceptionHandlingDemo {
 		ExceptionHandlingDemo.handleExceptions(str);
 	
 //		System.out.println("Length of the input string: "+length_str);
-		
+		scanner.close();
 ;	}
 
 }
