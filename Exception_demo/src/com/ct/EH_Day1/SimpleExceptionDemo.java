@@ -1,4 +1,4 @@
-package com.ct.EH_day1;
+package com.ct.EH_Day1;
 
 import java.util.Scanner;
 
