@@ -262,6 +262,10 @@ class Test46
 	}
 }
 
+Answer ==>
+Compile time error
+
+
 Q11) Find the output of the Program
 
 public class Test47
@@ -297,6 +301,14 @@ public class Test47
 	}
 }
 
+
+Answer ==>
+Start try
+Start risky
+End Risky
+End try
+Finally
+End of main
 
 Q12) Find the output of the Program
 

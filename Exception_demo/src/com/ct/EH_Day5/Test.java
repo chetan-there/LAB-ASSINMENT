@@ -1,15 +1,34 @@
 package com.ct.EH_Day5;
 
-import java.io.*;
-class Test
+public class Test
 {
-	public static void main(String[] args) //throws Exception 
+	public static void main(String [] args)
 	{
-		methodA();
+		String test="no";
+		try
+		{
+			System.out.println("Start try");
+			doRisky(test);
+			System.out.println("End try");
+		}
+		catch (Exception e)
+		{
+			System.out.println("Exception Handled");
+		}
+		finally
+		{
+			System.out.println("Finally");
+		}
+		System.out.println("End of main");
 	}
-
-	public static void methodA() throws IOException
+	static void doRisky(String test) throws Exception
 	{
-		System.out.println("Completed..");
+		System.out.println("Start risky");
+		if("yes".equals(test))
+		{
+			throw new Exception();
+		}
+		System.out.println("End Risky");
+		return;
 	}
 }
