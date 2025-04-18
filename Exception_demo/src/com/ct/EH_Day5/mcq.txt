@@ -15,6 +15,9 @@ class  ExceptionTest
 	}
 }
 
+Answer ==>
+java.lang.ArithmeticException: Number is divided by zero
+java.lang.ArrayIndexOutOfBoundsException: Array is out of limit 
 
 Q2) Find the output of the Program
 
