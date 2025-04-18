@@ -185,6 +185,14 @@ public class Test40{
    }
 }
 
+Answer ==>
+Enter main()
+Enter methodA()
+Enter methodB()
+Enter methodC()
+java.lang.ArithmeticException: / by zero
+Exit main()
+
 Q7) Find the output of the Program
 class Test43 
 {
@@ -198,6 +206,9 @@ class Test43
 		System.out.println("Completed..");
 	}
 }
+
+Answer ==>
+Compile time error
 
 
 Q8) Find the output of the Program
