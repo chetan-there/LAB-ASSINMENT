@@ -139,6 +139,12 @@ public class a110
     }
 }
 
+Answer ==>
+In catch IOException: class java.io.IOException
+In finally
+Exception in thread "main" java.lang.RuntimeException
+        at com.ct.EH_Day5.Test.main(Test.java:12)
+
 
 Q6) Find the output of the Program
 
