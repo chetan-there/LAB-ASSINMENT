@@ -114,6 +114,8 @@ Q4) Find the output of the Program
      }
 }
 
+Answer ==>
+-ic mc mf of 
 
 Q5) Find the output of the Program
 
