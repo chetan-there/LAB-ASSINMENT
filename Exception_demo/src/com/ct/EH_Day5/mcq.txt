@@ -384,6 +384,12 @@ class ExceptionPropogation
 }
 
 
+Answer==>
+Main method started
+Handled in m1
+Main method ended
+
+
 Q14) Find the output of the Program
 
 import java.io.FileNotFoundException;
@@ -402,6 +408,12 @@ public class a60
                }
        }
 }
+
+Answer==>
+book list not found!
+Exception in thread "main" java.io.FileNotFoundException: 
+        at com.ct.EH_Day5.Test.main(Test.java:10)
+
 
 Q15) Find the output of the Program
 
@@ -431,3 +443,4 @@ class InnerTry
 		System.out.println("Completed");
 	}
 }
+

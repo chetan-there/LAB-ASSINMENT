@@ -1,34 +1,28 @@
 package com.ct.EH_Day5;
 
-public class Test
+class Test 
 {
-	public static void main(String [] args)
+	public static void main(String[] args) 
 	{
-		String test="yes";
 		try
 		{
-			System.out.println("Start try");
-			doRisky(test);
-			System.out.println("End try");
+			String s=null;
+			System.out.println(s.length());
 		}
-		catch (Exception e)
+		catch (NullPointerException np)
 		{
-			System.out.println("Exception Handled");
+			System.out.println("Null Problem");
+			try
+			{
+				String s="xyz";
+				int no=Integer.parseInt(s);
+				System.out.println(no);
+			}
+			catch (NumberFormatException nf)
+			{
+				System.out.println("Number Format Problem");
+			}
 		}
-		finally
-		{
-			System.out.println("Finally");
-		}
-		System.out.println("End of main");
-	}
-	static void doRisky(String test) throws Exception
-	{
-		System.out.println("Start risky");
-		if("yes".equals(test))
-		{
-			throw new Exception();
-		}
-		System.out.println("End Risky");
-		return;
+		System.out.println("Completed");
 	}
 }
