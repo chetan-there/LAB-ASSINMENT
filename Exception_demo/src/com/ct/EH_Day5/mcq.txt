@@ -345,6 +345,13 @@ public class Test48
 	}
 }
 
+Answer ==>
+Start try
+Start risky
+Exception Handled
+Finally
+End of main
+
 Q13) Find the output of the Program
 
 class ExceptionPropogation 

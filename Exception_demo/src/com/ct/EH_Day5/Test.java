@@ -4,7 +4,7 @@ public class Test
 {
 	public static void main(String [] args)
 	{
-		String test="no";
+		String test="yes";
 		try
 		{
 			System.out.println("Start try");
