@@ -226,6 +226,9 @@ class Test44
 	}
 }
 
+Answer ==>
+Completed..
+
 Q9) Find the output of the Program
 import java.io.*;
 class Test45 
@@ -240,6 +243,9 @@ class Test45
 		System.out.println("Completed..");
 	}
 }
+
+Answer ==>
+Completed..
 
 Q10) Find the output of the Program
 import java.io.*;

@@ -1,13 +1,14 @@
 package com.ct.EH_Day5;
 
-class Test 
+import java.io.*;
+class Test
 {
-	public static void main(String[] args)  
+	public static void main(String[] args) //throws Exception 
 	{
 		methodA();
 	}
 
-	public static void methodA() throws Exception
+	public static void methodA() throws IOException
 	{
 		System.out.println("Completed..");
 	}
