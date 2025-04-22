@@ -112,6 +112,7 @@ public class ExceptionHandling
 	}
 }
 
+==>  Not for Vote
 
 5.What is the output of the following program
 class Age extends Exception
@@ -130,6 +131,7 @@ public class ExceptionHandling
 		
 	}
 }
+
 
 6.What is the output of the following program
 class Age extends Exception
