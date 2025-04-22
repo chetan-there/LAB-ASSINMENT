@@ -59,6 +59,31 @@ public class ExceptionHandling {
 	}
 }
 
+==> Exception beacause if we write try block then catch or finally block must be written its a compulsory.
+	
+	after writing the finally block it throw exception arthamatic exception casue : / by zero.
+	
+	after writing the catch block 
+	output=java.lang.ArithmeticException: / by zero
+20
+10
+6
+5
+4
+3
+2
+2
+2
+2
+1
+1
+1
+1
+1
+1
+1
+1
+1
 
 4.What is the output of the following program
 class Age extends Exception
@@ -86,6 +111,7 @@ public class ExceptionHandling
 		}		
 	}
 }
+
 
 5.What is the output of the following program
 class Age extends Exception
