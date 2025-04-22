@@ -221,6 +221,7 @@ public class ExceptionHandling
 	  }    
 }
 
+==> compile time error in overriden method exception written
 
 9.What is the output of the following program
 class Student{    
@@ -247,6 +248,8 @@ public class ExceptionHandling
 	 
 	  }    
 }
+
+==> 
 
 10.What is the output of the following program
 class Student{    
