@@ -1,18 +1,14 @@
 package com.ct.EH_Day7.BankApplication;
 
-public interface Bank {
+interface Bank {
+    void deposit(double amount) throws InvalidAmountException;
 
-    default void deposit(double amount){
-        if(amount <= 0){
-            throw new InvalidAmountException();
-        }
-    }
+    void withdraw(double amount) throws InsufficientFundsException, InvalidAmountException;
 
-    void withdraw(double amount){
-        
-    }
+    void transfer(BankAccount toAccount, double amount) throws InsufficientFundsException,
+            AccountNotFoundException, InvalidAmountException;
 
+    void applyForLoan(double amount) throws LoanNotAllowedException, InvalidAmountException;
 
-
-
+    double getBalance();
 }
