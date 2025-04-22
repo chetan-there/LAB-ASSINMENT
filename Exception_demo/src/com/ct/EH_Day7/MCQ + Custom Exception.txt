@@ -164,6 +164,10 @@ public class ExceptionHandling
 }
 
 
+==> Vote
+	Vote count
+
+
 7.What is the output of the following program
 class Student{    
 	void message()throws ArithmeticException {  //line 1
@@ -187,6 +191,7 @@ public class ExceptionHandling
 	  
 	  }    
 }     
+
 
 8.What is the output of the following program
 class Student{    
