@@ -46,6 +46,7 @@ public class ExceptionHandling
 	}
 }
 
+==> Valid Password
 
 3.What is the output of the following program
 public class ExceptionHandling {
@@ -57,6 +58,7 @@ public class ExceptionHandling {
 		   }
 	}
 }
+
 
 4.What is the output of the following program
 class Age extends Exception
