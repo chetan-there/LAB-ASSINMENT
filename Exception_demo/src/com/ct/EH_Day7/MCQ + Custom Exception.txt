@@ -132,6 +132,7 @@ public class ExceptionHandling
 	}
 }
 
+==> null
 
 6.What is the output of the following program
 class Age extends Exception
@@ -161,6 +162,7 @@ public class ExceptionHandling
 		}
 	}
 }
+
 
 7.What is the output of the following program
 class Student{    
