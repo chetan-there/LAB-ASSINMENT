@@ -192,6 +192,8 @@ public class ExceptionHandling
 	  }    
 }     
 
+==> compile time error beacause we writw lower priority exception first and in overriding we write higher priority .(Exception Hierarchy used here)
+
 
 8.What is the output of the following program
 class Student{    
@@ -218,6 +220,7 @@ public class ExceptionHandling
 	  
 	  }    
 }
+
 
 9.What is the output of the following program
 class Student{    
