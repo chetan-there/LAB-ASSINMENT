@@ -73,6 +73,9 @@ public class ExceptionHandling  {
 	}
 }
 
+==>
+Compilation Error
+Explanation: The method throws java.io.IOException but doesn't declare it in the throws clause. Unchecked exceptions don't need to be declared, but IOException is checked.
 
 4.What is the output of the following program
 class NIT
@@ -94,6 +97,12 @@ public class ExceptionHandling  {
 	}
 }
 
+==>Exception in catch
+Executed
+
+
+
+
 5.What is the output of the following program
 class NIT
 {
@@ -108,7 +117,7 @@ public class ExceptionHandling  {
 			NIT.nit();
 	}
 } 
-
+==>
 6. What is the output of the following program
 public class ExceptionHandling {
 	static void nit(int a,int b) {
