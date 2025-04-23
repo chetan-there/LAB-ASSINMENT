@@ -13,6 +13,7 @@ class Faculty extends Student{
 		}
 }
 
+
 public class ExceptionHandling 
 {
 	public static void main(String args[]) {    
@@ -25,6 +26,13 @@ public class ExceptionHandling
 	  
 	  }    
 }
+
+==>=>
+Output: "hai faculty"
+Explanation: The Faculty class overrides the message() method without declaring any exception (which is allowed for overriding methods as long as they don't throw broader exceptions). The try-catch block is unnecessary here but doesn't affect the output.
+
+
+
 
 2.What is the output of the following program
 public class ExceptionHandling  {  
@@ -47,6 +55,10 @@ public class ExceptionHandling  {
         }  
     }  
 }  
+==>Output: "ArrayIndexOutOfBoundsException"
+Explanation: The code tries to access arr[35] which is out of bounds (array length is 19). This exception is caught by the middle catch block.
+
+
 
 3.What is the output of the following program
 public class ExceptionHandling  {
@@ -60,6 +72,7 @@ public class ExceptionHandling  {
 		System.out.println("Executed");
 	}
 }
+
 
 4.What is the output of the following program
 class NIT
