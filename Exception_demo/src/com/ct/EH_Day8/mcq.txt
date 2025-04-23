@@ -1,0 +1,117 @@
+MCQs :
+-------
+1.What is the output of the following program
+class Student{    
+	void message() throws Exception{  // line 1
+		System.out.println("Hai Student");  
+		}    
+	}    
+	    
+class Faculty extends Student{    
+	void message() {  // line 2
+		System.out.println("hai faculty");  
+		}
+}
+
+public class ExceptionHandling 
+{
+	public static void main(String args[]) {    
+	   Student nit = new Faculty();    
+	     
+	   try {    
+	   nit.message();    
+	   }  
+	   catch (Exception e){}   
+	  
+	  }    
+}
+
+2.What is the output of the following program
+public class ExceptionHandling  {  
+    public static void main(String args[])  
+    {           
+        try {  
+            try {  
+                try {  
+                    int arr[] = { 5,7,89,7,54,22,35,144,587,4,25,33,698,541,2,44,5,74,4 };  
+                    System.out.println(arr[35]);  
+                } catch (ArithmeticException e) {  
+                    System.out.println("Arithmetic exception");  
+                }  
+            }catch (ArrayIndexOutOfBoundsException ar) {  
+                System.out.println(" ArrayIndexOutOfBoundsException ");  
+            }  
+        }  
+        catch (Exception e) {  
+            System.out.print("Exception");  
+        }  
+    }  
+}  
+
+3.What is the output of the following program
+public class ExceptionHandling  {
+	void nit()  
+	{
+		throw new java.io.IOException();
+	}
+	public static void main(String[] args) {
+		ExceptionHandling nit = new ExceptionHandling();
+		nit.nit();
+		System.out.println("Executed");
+	}
+}
+
+4.What is the output of the following program
+class NIT
+{
+	static void nit() throws IOException  
+	{
+		throw new IOException("IOException");
+	}
+}
+public class ExceptionHandling  {
+	
+	public static void main(String[] args) {
+		try {
+			NIT.nit();
+		} catch (IOException e) {
+			System.out.println("Exception in catch");
+		}
+		System.out.println("Executed");
+	}
+}
+
+5.What is the output of the following program
+class NIT
+{
+	static void nit() throws IOException  
+	{
+		throw new IOException("Input Output Exception");
+	}
+}
+
+public class ExceptionHandling  {
+	public static void main(String[] args) throws IOException {		
+			NIT.nit();
+	}
+} 
+
+6. What is the output of the following program
+public class ExceptionHandling {
+	static void nit(int a,int b) {
+		   System.out.println(10/a); 
+		   int[] arr={25,54,22,141,22,141,22,35};
+		   System.out.println(arr[b]);
+	}
+	public static void main (String[] args) {
+		try{
+			nit(10, 0);
+			nit(10, 15);
+		    		    
+    		}catch(ArithmeticException e){
+    		   System.out.println("can't divide by zero");
+    		}catch(ArrayIndexOutOfBoundsException e){
+    		   System.out.println("Out of bounds!");
+    		}
+		}
+   }
