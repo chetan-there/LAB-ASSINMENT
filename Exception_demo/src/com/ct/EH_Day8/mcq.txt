@@ -117,7 +117,10 @@ public class ExceptionHandling  {
 			NIT.nit();
 	}
 } 
-==>
+==>Program will compile but throw IOException at runtime
+Explanation: The main method declares it throws IOException, so when NIT.nit() throws the exception, it will propagate up and terminate the program.
+
+
 6. What is the output of the following program
 public class ExceptionHandling {
 	static void nit(int a,int b) {
@@ -137,3 +140,4 @@ public class ExceptionHandling {
     		}
 		}
    }
+==>
