@@ -327,4 +327,55 @@ Goodbye, Beautiful world!
 Explanation:
 Two threads run infinitely: one prints every 1s and the other every 2s. You'll see interleaved output.
 ________________________________________
-Q
+Q15)
+class Test4
+{
+    public static void main(String []argv)
+    {
+        Thread t = Thread.currentThread();
+        System.out.println("Name of current thread : " + t.getName());
+        t.setName("First Thread");
+        System.out.println("Name of thread after change : " + t.getName());
+    } 
+}
+Output:
+Name of current thread : main
+Name of thread after change : First Thread
+Explanation:
+The main thread's name is changed to "First Thread" using setName() method.
+________________________________________
+Q16)
+class Test15 extends Thread
+{
+    public void run()
+    {
+        System.out.println("PRINT ME");
+    }
+    public static void main(String []str)
+    {
+        try {
+            for(int i=0; i<9; i++) {
+                System.out.println(i);
+                Thread.sleep(500);
+            }
+        } catch(InterruptedException e) {
+            System.out.println("thread exception");
+        }
+        Thread t = new Thread();
+        t.start();
+    }
+}
+Output:
+0  
+1  
+2  
+3  
+4  
+5  
+6  
+7  
+8  
+Exception in thread "main" java.lang.IllegalThreadStateException
+Explanation:
+You created a thread with no runnable target, and since Thread.run() is empty by default, it runs nothing. But it throws exception when thread is not properly initialized (OS dependent behavior).
+________________________________________
