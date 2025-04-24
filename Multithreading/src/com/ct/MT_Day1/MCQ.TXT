@@ -226,3 +226,47 @@ Main thread after join
 Explanation:
 join() makes the main thread wait for t to finish execution before proceeding.
 ________________________________________
+Q11)
+class Test {
+    public static void main(String args[]) {
+        Thread t = new Thread(() -> {
+            try {
+                Thread.sleep(1000);
+                System.out.println("Child thread");
+            } catch (InterruptedException e) {
+                System.out.println("Interrupted");
+            }
+        });
+
+        t.start();
+        t.interrupt();
+    }
+}
+Output:
+Interrupted
+Explanation:
+Thread t is interrupted while sleeping, which throws InterruptedException.
+________________________________________
+Q12)
+class Test {
+    public static void main(String[] args) {
+        Thread t = new Thread(() -> {
+            while (!Thread.currentThread().isInterrupted()) {
+                System.out.println("Running...");
+            }
+            System.out.println("Stopped...");
+        });
+        t.start();
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {}
+        t.interrupt();
+    }
+}
+Output:
+Running... (printed many times)  
+Stopped...
+Explanation:
+Thread runs until it's interrupted. Then exits the loop and prints "Stopped...".
+Perfect! Here's the continuation from Q13 to Q20 with formatted Java multithreading questions, expected output, and explanations:
+________________________________________
