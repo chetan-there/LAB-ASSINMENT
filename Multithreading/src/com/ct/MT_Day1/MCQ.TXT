@@ -270,3 +270,61 @@ Explanation:
 Thread runs until it's interrupted. Then exits the loop and prints "Stopped...".
 Perfect! Here's the continuation from Q13 to Q20 with formatted Java multithreading questions, expected output, and explanations:
 ________________________________________
+Q13)
+class Test58 
+{
+    public static void main(String[] args) 
+    {
+        
+    }
+    System.out.println("Hello World!");
+}
+Output:
+Compilation Error
+Explanation:
+You cannot write executable statements like System.out.println() outside of a method or static/instance block. It violates Java syntax rules.
+________________________________________
+Q14)
+class Test61
+{
+    public static void main(String[] args) 
+    {
+        Runnable r1 = new Runnable() {
+            public void run() {
+                try {
+                    while (true) {
+                        System.out.println("Hello, world!");
+                        Thread.sleep(1000);
+                    }
+                } catch (InterruptedException iex) {}
+            }
+        };
+
+        Runnable r2 = new Runnable() {
+            public void run() {
+                try {
+                    while (true) {
+                        System.out.println("Goodbye, Beautiful world!");
+                        Thread.sleep(2000);
+                    }
+                } catch (InterruptedException iex) {}
+            }
+        };
+
+        Thread thr1 = new Thread(r1);
+        Thread thr2 = new Thread(r2);
+        thr1.start();
+        thr2.start();
+    }
+}
+Output (infinite loop):
+Hello, world!
+Goodbye, Beautiful world!
+Hello, world!
+Hello, world!
+Goodbye, Beautiful world!
+...
+Explanation:
+Two threads run infinitely: one prints every 1s and the other every 2s. You'll see interleaved output.
+________________________________________
+Q
