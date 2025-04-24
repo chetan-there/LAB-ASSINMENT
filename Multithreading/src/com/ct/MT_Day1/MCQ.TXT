@@ -80,3 +80,28 @@ task one
 task two
 (Order may vary) Explanation: Two Runnable objects passed to two threads. Both start and execute their tasks.
 ________________________________________
+Q5)
+class SimpleThread extends Thread {
+    public SimpleThread(String str) {
+        super(str);
+    }
+    public void run() {
+        for (int i = 0; i < 10; i++) {
+            System.out.println(i + " " + getName());
+            try {
+                sleep((int)(Math.random() * 1000));
+            } catch (InterruptedException e) {}
+        }
+        System.out.println("DONE! " + getName());
+    }
+}
+class Test {
+    public static void main (String args[]) {
+        new SimpleThread("J2EE").start();
+        new SimpleThread("J2ME").start();
+    }
+}
+Output:
+Interleaved numbers from both threads with names, ending in DONE! J2EE / J2ME
+Explanation: Two threads print their index and name, then finish.
+________________________________________
