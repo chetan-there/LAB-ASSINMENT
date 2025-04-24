@@ -379,3 +379,143 @@ Exception in thread "main" java.lang.IllegalThreadStateException
 Explanation:
 You created a thread with no runnable target, and since Thread.run() is empty by default, it runs nothing. But it throws exception when thread is not properly initialized (OS dependent behavior).
 ________________________________________
+Q17)
+class Foo implements Runnable
+{
+    public void run() 
+    {
+        for(int i=0;i<3;i++)
+            System.out.println("Run by..."+Thread.currentThread().getName()+", i is "+ i);
+    }
+
+    public void run(String name)
+    {
+        System.out.println("This is Second " + name);
+    }
+}
+
+public class Test18
+{
+    public static void main(String args[])
+    {
+        Foo f = new Foo();
+        Thread t = new Thread(f);
+        try 
+        {
+            System.out.println("Number will be printed after 500 milliseconds...");
+            for(int j=0;j<5;j++)
+            {
+                System.out.println("This is j..."+j);
+                Thread.sleep(500);
+            }
+        }
+        catch(InterruptedException e) 
+        {
+            System.out.println("InterruptedException.."+ e);
+        }
+    }
+}
+Output:
+Number will be printed after 500 milliseconds...
+This is j...0
+This is j...1
+This is j...2
+This is j...3
+This is j...4
+Explanation:
+Thread t is never started, so run() is not executed. Only the loop with j runs. The overloaded run(String) is not a thread method and won’t be invoked.
+________________________________________
+Q18)
+public class Test28 extends Thread
+{
+    public static void main(String [] args)
+    {
+        System.out.println(Thread.currentThread().getId()+" ");
+        Thread t1 = new Thread(new Test28(),"Rahul");
+        Thread t2 = new Thread(new Test28(),"Ravi");
+        Thread t3 = new Thread(new Test28(),"Puja");
+        t3.start();
+        t1.start();
+        t2.run();  // This runs on main thread
+        t2.start(); // t2 started again (Illegal)
+    }
+
+    public  void run()
+    {
+        for(int i=0; i<2; i++)
+            System.out.println(Thread.currentThread().getName()+" I'm :"+i);
+        System.out.println("It is end of loop");
+    }
+}
+Output:
+<Main thread ID>
+Ravi I'm :0  
+Ravi I'm :1  
+It is end of loop  
+...
+Exception in thread "main" java.lang.IllegalThreadStateException
+Explanation:
+t2.run() runs in main thread. But t2.start() is called after run() which means the thread was already started. Starting a thread twice causes IllegalThreadStateException.
+________________________________________
+Q19)
+class MyThread extends Thread 
+{
+    public void run() 
+    {
+        for (int i=0; i < 10; i++) 
+        {
+            System.out.println("hello world1");
+        }
+    }
+}
+
+public class Test36
+{
+    public static void main(String [] args) 
+    {
+        MyThread t1 = new MyThread();
+        t1.start();
+        try 
+        {
+            t1.join(); 
+        } 
+        catch (InterruptedException e) 
+        {
+            System.out.println("ERROR: Thread was interrupted");
+        }       
+        System.out.println("Thread is done!");
+    }
+}
+Output:
+hello world1  
+hello world1  
+... (10 times)
+Thread is done!
+Explanation:
+Main thread waits for t1 to complete using join(). After t1 finishes, it prints "Thread is done!"
+________________________________________
+Q20)
+public class JoinDemo1 
+{
+    public static void main(String[] args) throws InterruptedException 
+    {
+        System.out.println("Main thread started");
+        Thread thread = Thread.currentThread();
+        String name = thread.getName();
+        
+        for(int i=1; i<=5; i++)
+        {           
+            System.out.println(i + " by " + name + " thread ");
+            Thread.sleep(1000);
+            thread.join(); // Main thread joining itself
+        }       
+        System.out.println("Main thread ended");
+    }
+}
+Output:
+Main thread started  
+1 by main thread  
+Exception in thread "main" java.lang.IllegalThreadStateException
+Explanation:
+You cannot join() the current thread (i.e., the main thread waiting for itself). It causes deadlock and throws IllegalThreadStateException.
+
