@@ -189,3 +189,40 @@ run method called
 Explanation:
 Both t1 (a Thread) and t2 (a Thread wrapping another Thread) are started. Both invoke the same run() method.
 ________________________________________
+Q9)
+class Test {
+    public static void main(String args[]) {
+        Thread t = new Thread(new Runnable() {
+            public void run() {
+                System.out.println("Runnable run");
+            }
+        }) {
+            public void run() {
+                System.out.println("Thread run");
+            }
+        };
+        t.start();
+    }
+}
+Output:
+Thread run
+Explanation:
+If both Runnable and Thread define run(), then Thread's run() overrides Runnable's one.
+________________________________________
+Q10)
+class Test {
+    public static void main(String args[]) throws InterruptedException {
+        Thread t = new Thread(() -> {
+            System.out.println("Inside thread");
+        });
+        t.start();
+        t.join();
+        System.out.println("Main thread after join");
+    }
+}
+Output:
+Inside thread  
+Main thread after join
+Explanation:
+join() makes the main thread wait for t to finish execution before proceeding.
+________________________________________
