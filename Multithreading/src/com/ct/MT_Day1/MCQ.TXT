@@ -140,3 +140,52 @@ Output:
 Prime and Non-Prime numbers interleaved (timing may differ)
 Explanation: Both threads print prime and non-prime numbers with sleep to simulate delay.
 ________________________________________
+Q7)
+public class Test21 extends Thread {
+    static Thread t;
+    public static void main(String [] args) {
+        try {
+            t=new Thread(new Test21(),"Ravi");
+            t.start();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+    public void run() {
+        for(int i=1; i<5; i++) {
+            try {
+                System.out.print(Thread.currentThread().getName()+" ");
+                t.start();
+            } catch (Exception e) {
+                System.out.println(" will not botther about but "+e+" happened "+i+" times");
+            }
+        }
+    }
+}
+Output:
+Ravi  will not botther about but java.lang.IllegalThreadStateException happened 1 times
+Ravi  will not botther about but java.lang.IllegalThreadStateException happened 2 times
+...
+Explanation: Trying to start the same thread again in the run method leads to IllegalThreadStateException.
+Here is the continuation from Q8 onwards with multithreading Java output questions, expected output, and explanations:
+________________________________________
+Q8)
+class MyThread extends Thread {
+    public void run() {
+        System.out.println("run method called");
+    }
+}
+class Test {
+    public static void main(String args[]) {
+        MyThread t1 = new MyThread();
+        Thread t2 = new Thread(t1);
+        t1.start();
+        t2.start();
+    }
+}
+Output:
+run method called  
+run method called
+Explanation:
+Both t1 (a Thread) and t2 (a Thread wrapping another Thread) are started. Both invoke the same run() method.
+________________________________________
