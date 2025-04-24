@@ -32,3 +32,24 @@ Name of thread  : main
 Id of thread  : 1
 Explanation: This code displays details of the main thread.
 ________________________________________
+Q3)
+class Test {
+    public static void main(String args[]) {
+        new Thread() {
+            public void run() {
+                System.out.println("task one");
+            }
+        }.start();
+
+        new Thread() {
+            public void run() {
+                System.out.println("task two");
+            }
+        }.start();
+    }
+}
+Output:
+task one
+task two
+(Order may vary) Explanation: Two anonymous threads are created and started. They print messages.
+________________________________________
