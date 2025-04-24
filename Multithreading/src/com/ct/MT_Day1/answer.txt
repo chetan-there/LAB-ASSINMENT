@@ -1,0 +1,250 @@
+    Here are the outputs for each of the given code snippets:
+
+### Q1)
+**Output:**
+```
+Hello Welcome here..0
+Hello Welcome here..1
+...
+Hello Welcome here..10
+Exception in thread "main" java.lang.IllegalThreadStateException
+    at java.lang.Thread.start(Thread.java:708)
+    at Test1.main(Test.java:15)
+```
+**Explanation:** Starting a thread twice throws `IllegalThreadStateException`.
+
+---
+
+### Q2)
+**Output:**
+```
+Thread[main,5,main]
+Name of thread  : main
+Id of thread  : [some thread ID]
+```
+**Explanation:** Prints the current thread's details (name, priority, thread group) and its ID.
+
+---
+
+### Q3)
+**Output:**
+```
+task one
+task two
+```
+(or the order may vary due to thread scheduling)
+
+**Explanation:** Two anonymous threads execute `run()` independently.
+
+---
+
+### Q4)
+**Output:**
+```
+task one
+task two
+```
+(or the order may vary due to thread scheduling)
+
+**Explanation:** Similar to Q3, but using `Runnable` objects.
+
+---
+
+### Q5)
+**Output:**
+```
+0 J2EE
+0 J2ME
+1 J2EE
+1 J2ME
+...
+9 J2EE
+9 J2ME
+DONE! J2EE
+DONE! J2ME
+```
+**Explanation:** Two threads (`J2EE` and `J2ME`) run concurrently with random sleeps.
+
+---
+
+### Q6)
+**Output:**
+```
+Prime No.= 2
+Non-Prime No.= 4
+Prime No.= 3
+Non-Prime No.= 6
+...
+Non-Prime No.= 10
+```
+**Explanation:** Prime and non-prime numbers are printed alternately with delays.
+
+---
+
+### Q7)
+**Output:**
+```
+Ravi
+Exception in thread "Ravi" java.lang.IllegalThreadStateException
+ will not botther about but java.lang.IllegalThreadStateException happened 1 times
+...
+```
+**Explanation:** Trying to restart a thread (`t.start()`) inside `run()` throws `IllegalThreadStateException`.
+
+---
+
+### Q8)
+**Output:**
+```
+Error: go() method is inside the catch block (invalid syntax).
+```
+**Explanation:** The code has a syntax error (`go()` is defined inside `catch`).
+
+---
+
+### Q9)
+**Output:**
+```
+YourHorse 
+MyHorse 
+```
+(or the order may vary)
+
+**Explanation:** Two threads (`MyHorse` and `YourHorse`) execute `run()`.
+
+---
+
+### Q10)
+**Output:**
+```
+Peacock 
+Sparrow 
+Parrot 
+```
+**Explanation:** Threads (`Peacock`, `Sparrow`, and `Parrot`) are started via instance/static blocks.
+
+---
+
+### Q11)
+**Output:**
+```
+No output (infinite loop with no prints).
+```
+**Explanation:** The `run(String s)` method is not overridden from `Thread`, so `run()` (empty) is executed.
+
+---
+
+### Q12)
+**Output:**
+```
+Value of i = 0
+Value of i = 1
+...
+Value of i = 9
+```
+**Explanation:** The overridden `start()` method runs in the main thread (not as a new thread).
+
+---
+
+### Q13)
+**Output:**
+```
+Compilation error (System.out.println outside a method).
+```
+**Explanation:** `System.out.println` cannot be outside a method/block.
+
+---
+
+### Q14)
+**Output:**
+```
+Hello, world!
+Goodbye, Beautiful world!
+Hello, world!
+Hello, world!
+Goodbye, Beautiful world!
+...
+```
+**Explanation:** Two threads print messages at different intervals (1s and 2s).
+
+---
+
+### Q15)
+**Output:**
+```
+Name of current thead : main
+Name of thread after change : First Thread
+```
+**Explanation:** The main thread's name is changed.
+
+---
+
+### Q16)
+**Output:**
+```
+0
+1
+...
+8
+PRINT ME
+```
+**Explanation:** Main thread prints 0-8, then a new thread prints "PRINT ME".
+
+---
+
+### Q17)
+**Output:**
+```
+Number Will be printt After 500 MiliSecond..
+This is j...0
+This is j...1
+...
+This is j...4
+```
+**Explanation:** The `run()` method is not called (no thread execution).
+
+---
+
+### Q18)
+**Output:**
+```
+[main thread ID]
+Rahul I'm :0
+Rahul I'm :1
+It is end of loop
+Ravi I'm :0
+Ravi I'm :1
+It is end of loop
+Puja I'm :0
+Puja I'm :1
+It is end of loop
+```
+**Explanation:** Threads `Rahul`, `Ravi`, and `Puja` execute `run()` (order may vary).
+
+---
+
+### Q19)
+**Output:**
+```
+hello world1
+hello world1
+...
+hello world1 (10 times)
+Thread is done!
+```
+**Explanation:** `t1.join()` ensures "Thread is done!" prints after `t1` completes.
+
+---
+
+### Q20)
+**Output:**
+```
+Main thread started
+1 by main thread 
+Exception in thread "main" java.lang.IllegalThreadStateException
+```
+**Explanation:** `thread.join()` (main thread joining itself) causes a deadlock.
+
+---
+
+Let me know if you need further clarification on any output!
