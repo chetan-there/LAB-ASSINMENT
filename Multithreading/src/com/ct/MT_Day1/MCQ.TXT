@@ -17,3 +17,18 @@ Output:
 Runtime Exception: IllegalThreadStateException
 Explanation: You cannot start a thread more than once. The second call to t.start() throws IllegalThreadStateException.
 ________________________________________
+Q2)
+class Test {
+    public static void main(String []args) {
+        Thread t = Thread.currentThread();
+        System.out.println(t);
+        System.out.println("Name of thread  : "+t.getName());
+        System.out.println("Id of thread  : "+t.getId());
+    } 
+}
+Output (may vary):
+Thread[main,5,main]
+Name of thread  : main
+Id of thread  : 1
+Explanation: This code displays details of the main thread.
+________________________________________
