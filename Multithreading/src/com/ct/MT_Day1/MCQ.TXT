@@ -105,3 +105,38 @@ Output:
 Interleaved numbers from both threads with names, ending in DONE! J2EE / J2ME
 Explanation: Two threads print their index and name, then finish.
 ________________________________________
+Q6)
+class Prime extends Thread {
+    public void run() {
+        try {
+            for(int i=1;i<=10;i++) {
+                if(i==2||i==3||i==5||i==7) {
+                    System.out.println ("Prime No.= "+i);
+                }
+                Thread.sleep(500);
+            }
+        } catch (Exception e){}
+    }
+}
+class NotPrime extends Thread {
+    public void run() {
+        try {
+            for(int i=1;i<=10;i++) {
+                if(i==4||i==6||i==8||i==9||i==10) {
+                    System.out.println ("Non-Prime No.= "+i);
+                }
+                Thread.sleep(500);
+            }
+        } catch (Exception e){}
+    }
+}
+class Test {
+    public static void main(String args[]) {
+        new Prime().start();
+        new NotPrime().start();
+    }
+}
+Output:
+Prime and Non-Prime numbers interleaved (timing may differ)
+Explanation: Both threads print prime and non-prime numbers with sleep to simulate delay.
+________________________________________
