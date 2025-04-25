@@ -207,4 +207,22 @@ Explanation:
 •	Both threads increment the same counter 1000 times.
 •	increment() is synchronized, so result is consistent.
 ________________________________________
-Q
+Q8
+class Test {
+    public static void main(String[] args) throws InterruptedException {
+        Thread t1 = new Thread(() -> {
+            System.out.println("Thread-1 running");
+        });
+
+        t1.start();
+        t1.join();
+        t1.start();
+    }
+}
+Output:
+Thread-1 running
+Exception in thread "main" java.lang.IllegalThreadStateException
+Explanation:
+•	You cannot start a thread twice.
+•	Second t1.start() throws IllegalThreadStateException.
+________________________________________
