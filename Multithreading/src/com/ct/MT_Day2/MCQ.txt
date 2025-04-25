@@ -1,0 +1,52 @@
+Let's solve each question one by one, providing the full question, the correct output, and a brief explanation below each.
+________________________________________
+Q1
+public class Test45 extends Thread {
+    static String sName = "good";
+    public static void main(String argv[]) {
+        Test45 t = new Test45();
+        t.nameTest(sName);
+        System.out.println(sName);    
+    }
+
+    public void nameTest(String sName) {
+        sName = sName + " idea ";
+        start();
+    }
+
+    public void run() {
+        for(int i=0; i<4; i++) {
+            sName = sName + " " + i;
+        }
+    }
+}
+Output:
+good
+Explanation:
+•	sName inside nameTest is a local variable shadowing the static variable.
+•	start() calls run() in a separate thread, but sName modified in run() is also local.
+•	System.out.println(sName) in main() refers to the static variable, which remains unchanged.
+________________________________________
+Q2
+public class Test46 {
+    public static void main(String argv[]) {
+        Test1 pm1 = new Test1("One");
+        pm1.run();
+        Test1 pm2 = new Test1("Two");
+        pm2.run();
+    }
+}
+class Test1 extends Thread {
+    private String sTname = "";
+    Test1(String s) {
+        sTname = s;
+    }
+    public void run() {
+        for(int i = 0; i < 5 ; i++) {
+            try {
+                sleep(1000);
+            } catch(InterruptedException e) {}
+            Thread.yield();
+            System.out.println(sTname);
+        }
+ 
