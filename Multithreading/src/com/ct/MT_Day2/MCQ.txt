@@ -275,4 +275,147 @@ Explanation:
 •	t1.start() runs in a new thread.
 •	t2.run() runs in the main thread.
 ________________________________________
-Q
+Q11
+class A implements Runnable {
+    public void run() {
+        System.out.print(Thread.currentThread().getName());
+    }
+}
+class B implements Runnable {
+    public void run() {
+        new A().run();
+        new Thread(new A(),"T2").run();
+        new Thread(new A(),"T3").start();
+    }
+}
+public class Test {
+    public static void main (String[] args) {
+        new Thread(new B(),"T1").start();  
+    }
+}
+Output:
+T1T1T3
+Explanation:
+•	run() methods are directly called, except the last one which starts a new thread.
+•	So first 2 lines run in "T1", last in "T3".
+________________________________________
+Q12
+public class Test extends Thread {
+    static String name = "ravi";
+
+    public static void main(String args[]) {
+        Test t = new Test();
+        t.Test(name);
+        System.out.print(" " + name);
+    }
+
+    public void Test(String name) {
+        start();
+        System.out.print(" method");
+    }
+
+    public void run() {
+        System.out.print(" run");
+    }
+}
+Output:
+ method run ravi
+Explanation:
+•	start() starts a new thread that runs run().
+•	Main thread prints "method" and "ravi".
+________________________________________
+Q13
+class Job extends Thread {
+    private Integer number = 0;
+    public void run() {
+        for (int i = 1; i < 1000000; i++) {
+            number++;
+        }
+    }
+    public Integer getNumber() {
+        return number;
+    }
+}
+public class Test {
+    public static void main(String[] args) {
+        Job thread = new Job();
+        thread.start();
+        try {
+            thread.join();
+        } catch (Exception e) {}
+        System.out.println(thread.getNumber());
+    }
+}
+Output:
+999999
+Explanation:
+•	Loop increments from 1 to 999999.
+•	join() ensures main waits until it finishes.
+________________________________________
+Q14
+class MyData extends Thread {
+    private boolean request;
+    private String  data;
+
+    public void run() {
+        storeMessage("Hello");
+        String str = retrieveMessage();
+        System.out.println(str);
+    }
+
+    public synchronized void storeMessage(String data) {
+        request = true;
+        this.data = data;
+    }
+
+    public synchronized String retrieveMessage() {
+        request = false;
+        return data + " : " + request;
+    }
+}
+public class Test {
+    public static void main(String[] args) {
+        MyData md = new MyData();
+        md.start();
+    }
+}
+Output:
+Hello : false
+Explanation:
+•	Message is stored (request = true).
+•	Then retrieved (request = false) and printed.
+________________________________________
+Q15
+public class Test extends Thread {
+    public static void main(String[] args) throws Exception {
+        Test t = new Test();
+        t.start();
+        t.method();
+    }
+
+    public void run() {
+        System.out.println("run");
+    }
+
+    public void method() {
+        hello();
+        System.out.println("method");
+    }
+
+    public void hello() {
+        hello1();
+        System.out.println("PR");
+    }
+
+    public void hello1() {
+        System.out.println("RR");
+    }
+}
+Output (order may vary):
+RR
+PR
+method
+run
+Explanation:
+•	Main thread calls method(), hello(), and hello1().
+•	Separate thread prints run.
