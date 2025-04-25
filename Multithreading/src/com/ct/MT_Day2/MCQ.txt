@@ -579,6 +579,4 @@ Explanation:
 •	t.start() creates new thread.
 •	t.run() runs again in main thread.
 ________________________________________
-✅ All 20 questions are now solved with clear outputs and brief explanations.
-Let me know if you’d like a PDF version, quiz format, or want to practice similar questions!
 
