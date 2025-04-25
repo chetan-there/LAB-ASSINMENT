@@ -419,3 +419,60 @@ run
 Explanation:
 •	Main thread calls method(), hello(), and hello1().
 •	Separate thread prints run.
+Q16
+class Test {
+    public static void main(String[] args) {
+        Runnable r = new Runnable() {
+            public void run() {
+                System.out.print("Cat");
+            }
+        };
+        Thread t = new Thread(r) {
+            public void run() {
+                System.out.print("Dog");
+            }
+        };
+        t.start();
+    }
+}
+Output:
+Dog
+Explanation:
+•	A Thread overrides run() to print "Dog".
+•	Even though Runnable says "Cat", the thread’s own run() is used because Thread’s method takes precedence.
+________________________________________
+Q17
+class MyThread extends Thread {
+    public void run() {
+        System.out.println("MyThread: run()");
+    }
+    public void start() {
+        System.out.println("MyThread: start()");
+    }
+}
+
+class MyRunnable implements Runnable {
+    public void run() {
+        System.out.println("MyRunnable: run()");
+    }
+    public void start() {
+        System.out.println("MyRunnable: start()");
+    }
+}
+
+public class Test {
+    public static void main(String args[]) {
+        MyThread myThread = new MyThread();
+        MyRunnable myRunnable = new MyRunnable();
+        Thread thread = new Thread(myRunnable);
+        myThread.start();   // calls overridden start() in MyThread
+        thread.start();     // runs MyRunnable's run()
+    }
+}
+Output:
+MyThread: start()
+MyRunnable: run()
+Explanation:
+•	MyThread.start() calls overridden start(), not run().
+•	thread.start() starts the real thread, calling run() of MyRunnable.
+________________________________________
