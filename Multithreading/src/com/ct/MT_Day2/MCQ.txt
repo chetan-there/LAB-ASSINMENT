@@ -111,3 +111,32 @@ Explanation:
 •	Main thread prints "End of method".
 •	Child thread runs run() and handles the exception.
 ________________________________________
+Q5
+public class Test59 {
+    public static void main(String [] args) {
+        myRunnable r = new myRunnable();
+
+        Thread t1 = new Thread();
+        Thread t2 = new Thread();
+
+        t1.setName("Thread One");
+        t2.setName("Thread Two");
+
+        t1.start();
+        t2.start();
+
+        System.out.println("Mains Thread: " + Thread.currentThread().getName());
+    }
+}
+
+class myRunnable implements Runnable {
+    public void run() {
+        for ( int i = 1; i < 4; i++) 
+            System.out.println("Thread: " + Thread.currentThread().getName());
+    }
+}
+Output:
+Mains Thread: main
+Explanation:
+•	The threads t1 and t2 don’t have the runnable attached, so their run() does nothing.
+•	Only main prints its name.
