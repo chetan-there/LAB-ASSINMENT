@@ -226,3 +226,53 @@ Explanation:
 •	You cannot start a thread twice.
 •	Second t1.start() throws IllegalThreadStateException.
 ________________________________________
+Q9
+class Test {
+    public static void main(String[] args) {
+        Thread t = new Thread(() -> {
+            System.out.println(Thread.currentThread().getName() + " is running");
+        });
+
+        t.start();
+        t.run();
+    }
+}
+Output:
+Thread-0 is running
+main is running
+Explanation:
+•	t.start() runs in a new thread.
+•	t.run() runs again but on the main thread.
+________________________________________
+Q10
+class Test {
+    public static void main(String[] args) {
+        Runnable task = () -> {
+            for (int i = 0; i < 5; i++) {
+                System.out.println(Thread.currentThread().getName() + ": " + i);
+            }
+        };
+
+        Thread t1 = new Thread(task, "Thread-1");
+        Thread t2 = new Thread(task, "Thread-2");
+
+        t1.start();
+        t2.run();
+    }
+}
+Output (order may vary):
+Thread-2: 0
+Thread-2: 1
+Thread-2: 2
+Thread-2: 3
+Thread-2: 4
+Thread-1: 0
+Thread-1: 1
+Thread-1: 2
+Thread-1: 3
+Thread-1: 4
+Explanation:
+•	t1.start() runs in a new thread.
+•	t2.run() runs in the main thread.
+________________________________________
+Q
