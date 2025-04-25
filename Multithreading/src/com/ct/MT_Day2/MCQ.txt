@@ -476,3 +476,109 @@ Explanation:
 •	MyThread.start() calls overridden start(), not run().
 •	thread.start() starts the real thread, calling run() of MyRunnable.
 ________________________________________
+Q18
+class MyThread extends Thread {
+    String myName;
+
+    MyThread(String name) {
+        myName = name;
+    }
+
+    public void run() {
+        for(int i = 0; i < 10; i++) {
+            System.out.println(myName);
+        }
+    }
+}
+
+public class Test {
+    public static void main(String args[]) {
+        try {
+            MyThread mt1 = new MyThread("mt1");
+            MyThread mt2 = new MyThread("mt2");
+            mt1.start();
+            mt1.join();  // wait for mt1 to finish
+            mt2.start();
+        } catch(InterruptedException ex) {}
+    }
+}
+Output:
+mt1
+mt1
+...
+mt1
+mt2
+mt2
+...
+mt2
+("mt1" printed 10 times first, then "mt2" 10 times)
+Explanation:
+•	mt1.join() ensures mt2 starts only after mt1 finishes.
+________________________________________
+Q19
+class MyThread implements Runnable {
+    String str;
+    MyThread(String str) {
+        this.str = str;
+    }
+    public void run() {
+        for(int i = 1; i <= 10; i++) {
+            System.out.println(str + " : " + i);
+            try {
+                Thread.sleep(100);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+
+public class Test {
+    public static void main(String [] args) {
+        MyThread obj1 = new MyThread("Cut the Ticket");
+        MyThread obj2 = new MyThread(" Show the Seat");
+
+        Thread t1 = new Thread(obj1);
+        Thread t2 = new Thread(obj2);
+
+        t1.start();
+        t2.start();
+    }
+}
+Output (interleaved):
+Cut the Ticket : 1
+ Show the Seat : 1
+Cut the Ticket : 2
+ Show the Seat : 2
+...
+Explanation:
+•	Two threads print interleaved messages 10 times each with a sleep.
+•	Output order can vary based on scheduler.
+________________________________________
+Q20
+public class Test76 {
+    public static void main(String[] args) {
+        new Test76().go();
+    }
+
+    public void go() {
+        Runnable r = new Runnable() {
+            public void run() {
+                System.out.println("foo");
+            }
+        };
+        Thread t = new Thread(r);
+        t.start(); // runs in new thread
+        t.run();   // runs in main thread
+    }
+}
+Output:
+foo
+foo
+Explanation:
+•	t.start() creates new thread.
+•	t.run() runs again in main thread.
+________________________________________
+✅ All 20 questions are now solved with clear outputs and brief explanations.
+Let me know if you’d like a PDF version, quiz format, or want to practice similar questions!
+
