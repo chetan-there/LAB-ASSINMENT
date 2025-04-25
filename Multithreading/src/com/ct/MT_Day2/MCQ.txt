@@ -49,4 +49,41 @@ class Test1 extends Thread {
             Thread.yield();
             System.out.println(sTname);
         }
- 
+    }
+}
+Output:
+One
+One
+One
+One
+One
+Two
+Two
+Two
+Two
+Two
+Explanation:
+•	run() is called directly, so no new thread is started.
+•	It runs sequentially, first printing "One" 5 times, then "Two" 5 times.
+________________________________________
+Q3
+class Test55 extends Thread {
+    static Thread tf, ts;
+
+    public synchronized void run() {
+        System.out.println(Thread.currentThread().getName()+"");
+        ts.start();
+    }
+
+    public static void main(String[] args) {
+        tf = new Thread(new Test55(),"SCJP");
+        ts = new Thread(new Test55(),"SCJWD");
+        tf.start();
+    }
+}
+Output:
+SCJP
+SCJWD
+Explanation:
+•	tf is started in main, which prints "SCJP" and calls ts.start() inside run(), leading to "SCJWD".
+________________________________________
