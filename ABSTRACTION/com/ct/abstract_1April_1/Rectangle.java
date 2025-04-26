@@ -18,6 +18,4 @@ public class Rectangle extends Shape {
     void printDetails() {
         System.out.println("Type = Rectangle \n"+"Length = "+length+"\nBreadth = "+breadth+"\nArea ="+getArea());
         }
-
-    
 }
