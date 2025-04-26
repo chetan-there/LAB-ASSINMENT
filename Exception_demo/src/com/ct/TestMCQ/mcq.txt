@@ -19,4 +19,7 @@ Answer: They must be either caught or declared in the method signature.
 
 
 7. Which of the following statements about Java exceptions is correct? 
-Answer: RuntimeException is an unchecked exception. 
+Answer: RuntimeException is an unchecked exception.
+
+8. What is exception chaining in Java? 
+Answer: Exception caused by another exception. 
