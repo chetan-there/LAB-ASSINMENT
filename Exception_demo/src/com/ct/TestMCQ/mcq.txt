@@ -10,3 +10,6 @@ Answer: throw
 
 4. Which of the following is NOT a valid combination in Java? 
 Answer: catch-finally 
+
+5. Which block executes if an exception is not thrown in the try block? 
+Answer: finally 
