@@ -1,8 +1,5 @@
 
 
-6. Which statement is true about checked exceptions? 
-Answer: They must be either caught or declared in the method signature.
-
 7. Which of the following statements about Java exceptions is correct? 
 Answer: RuntimeException is an unchecked exception. 
 
