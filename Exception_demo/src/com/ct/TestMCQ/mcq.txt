@@ -4,3 +4,6 @@ Answer: throws
 
 2. Which of the following is an example of an unchecked exception? 
 Answer: NullPointerException 
+
+3. Which keyword is used to manually throw an exception in Java? 
+Answer: throw 
