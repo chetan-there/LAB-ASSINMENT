@@ -7,6 +7,7 @@ Answer: NullPointerException
 
 3. Which keyword is used to manually throw an exception in Java? 
 Answer: throw 
+
 4. Which of the following is NOT a valid combination in Java? 
 Answer: catch-finally 
 5. Which block executes if an exception is not thrown in the try block? 
