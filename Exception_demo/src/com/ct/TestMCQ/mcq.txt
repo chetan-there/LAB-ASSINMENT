@@ -1,0 +1,3 @@
+Java Exception Handling MCQs - Full Questions and Answers 
+1. Which keyword is used to declare that a method may throw an exception? 
+Answer: throws 

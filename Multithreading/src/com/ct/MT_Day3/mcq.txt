@@ -1,6 +1,3 @@
-Java Exception Handling MCQs - Full Questions and Answers 
-1. Which keyword is used to declare that a method may throw an exception? 
-Answer: throws 
 
 2. Which of the following is an example of an unchecked exception? 
 Answer: NullPointerException 
@@ -10,14 +7,19 @@ Answer: throw
 
 4. Which of the following is NOT a valid combination in Java? 
 Answer: catch-finally 
+
 5. Which block executes if an exception is not thrown in the try block? 
 Answer: finally 
+
 6. Which statement is true about checked exceptions? 
-Answer: They must be either caught or declared in the method signature. 
+Answer: They must be either caught or declared in the method signature.
+
 7. Which of the following statements about Java exceptions is correct? 
 Answer: RuntimeException is an unchecked exception. 
+
 8. What is exception chaining in Java? 
 Answer: Exception caused by another exception. 
+
 9. What is the output of the following code? 
 try { 
 throw new Exception("Test"); 
@@ -25,6 +27,7 @@ throw new Exception("Test");
 System.out.println(e.getMessage()); 
 } 
 Answer: Test 
+
 10. What is the output of the following code? 
 try { 
 int x = 10 / 0; 
@@ -35,12 +38,16 @@ System.out.print("B");
 System.out.print("C"); 
 } 
 Answer: BC 
+
 11. Can a try block exist without a catch block? 
 Answer: Yes, if finally is present. 
+
 12. What is the purpose of the finally block in exception handling? 
-Answer: To execute code regardless of whether an exception occurs or not. 
+Answer: To execute code regardless of whether an exception occurs or not.
+
 13. Which of the following exceptions is thrown when an object is accessed with a null reference? 
 Answer: NullPointerException 
+
 14. What is the result of the following code? 
 try { 
 int[] arr = new int[5]; 
@@ -49,15 +56,20 @@ int value = arr[10];
 System.out.println("Exception Caught!"); 
 } 
 Answer: Exception Caught! 
+
 15. Which of the following is true about custom exceptions in Java? 
 Answer: They must extend Exception or its subclasses. 
+
 16. Which of the following can be used to handle multiple types of exceptions in a single catch 
 block (Java 7 and above)? 
 Answer: Multi-catch using '|' operator. 
+
 17. What happens if a return statement is encountered in both try and finally blocks? 
 Answer: The return in finally is executed. 
+
 18. What happens if an exception is not caught in the current method? 
 Answer: The exception is propagated to the calling method. 
+
 19. What is the output of the following code? 
 try { 
 System.out.println("Start"); 
@@ -69,6 +81,7 @@ System.out.println("Finally");
 } 
 Answer: 
 Start 
+
 Finally 
 20. Which of the following is the superclass of all exceptions and errors in Java? 
 Answer: Throwable
