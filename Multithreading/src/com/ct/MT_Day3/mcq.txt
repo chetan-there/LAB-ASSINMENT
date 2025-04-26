@@ -1,12 +1,4 @@
- 
 
-9. What is the output of the following code? 
-try { 
-throw new Exception("Test"); 
-} catch (Exception e) { 
-System.out.println(e.getMessage()); 
-} 
-Answer: Test 
 
 10. What is the output of the following code? 
 try { 

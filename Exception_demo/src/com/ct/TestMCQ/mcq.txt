@@ -22,4 +22,12 @@ Answer: They must be either caught or declared in the method signature.
 Answer: RuntimeException is an unchecked exception.
 
 8. What is exception chaining in Java? 
-Answer: Exception caused by another exception. 
+Answer: Exception caused by another exception.  
+
+9. What is the output of the following code? 
+try { 
+throw new Exception("Test"); 
+} catch (Exception e) { 
+System.out.println(e.getMessage()); 
+} 
+Answer: Test 
