@@ -1,10 +1,4 @@
-
-
-7. Which of the following statements about Java exceptions is correct? 
-Answer: RuntimeException is an unchecked exception. 
-
-8. What is exception chaining in Java? 
-Answer: Exception caused by another exception. 
+ 
 
 9. What is the output of the following code? 
 try { 
