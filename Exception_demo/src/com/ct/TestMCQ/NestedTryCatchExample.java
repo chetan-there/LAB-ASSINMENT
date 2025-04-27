@@ -42,10 +42,11 @@ public class NestedTryCatchExample {
 // zero happens.•Second try-catch:
 // Handles array access,
 // catches ArrayIndexOutOfBoundsException if
-// result
-// is
+// result is
+// 
 // invalid index.•finally block:Prints"Execution complete"
 // every time.
+
 // Test Cases:
 // Input Output 10 0
 // Division by zero!Array element
