@@ -1,5 +1,5 @@
 
-// package com.ct.TestMCQ;
+
 // You are working on the VoterValidation custom exception problem where:
 // Problem:
 // • Create a custom checked exception InvalidAgeException.
@@ -12,6 +12,8 @@
 // You failed one test case because zero (0) input needs a specific message "Zero Not Allowed."
 // instead of "Negative age value not accepted.".
 //  Here’s the correct Java code to solve ALL hidden test cases:
+package com.ct.TestMCQ;
+
 import java.util.Scanner;
 
 // Custom Checked Exception
@@ -64,4 +66,3 @@ public class VoterValidation {
 // Important Correction:
 // • You must specifically check age == 0 before checking age < 0.
 // • Otherwise, 0 would wrongly fall under negative values!
-// Alri
