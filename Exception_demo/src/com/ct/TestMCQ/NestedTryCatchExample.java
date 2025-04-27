@@ -1,16 +1,13 @@
 
-
-
 // You want a Java program for the NestedTryCatchExample problem, including handling division and 
 // array access with nested try-catch blocks, and printing "Execution complete" in the finally block.
 // It must pass multiple test cases exactly like the examples you shared.
 // Here’s the full working Java code with explanation:
 
-
-
 package com.ct.TestMCQ;
 
 import java.util.Scanner;
+
 public class NestedTryCatchExample {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -45,7 +42,7 @@ public class NestedTryCatchExample {
 // zero happens.•Second try-catch:
 // Handles array access,
 // catches ArrayIndexOutOfBoundsException if
-// result 
+// result
 // is
 // invalid index.•finally block:Prints"Execution complete"
 // every time.
