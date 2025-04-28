@@ -212,3 +212,248 @@ Thread[NareshIT,6,main]
 Explanation:
 •	Thread named "NareshIT", priority 6.
 ________________________________________
+10. What is the output of the following code?
+public class MultiThread extends Thread
+{	
+	public static void main(String[] args) {
+		MultiThread m1 = new MultiThread();
+		MultiThread m2 = new MultiThread();
+		MultiThread m3 = new MultiThread();
+		m1.start();
+		m2.start();
+		m3.start();
+	}
+	public void run() {
+		System.out.println(Thread.currentThread().getName());
+	}
+}
+Output:
+Thread-0
+Thread-1
+Thread-2
+(order may vary)
+________________________________________
+11. What is the output of the following code?
+public class MultiThread extends Thread
+{	
+	public static void main(String[] args) {
+		MultiThread m1 = new MultiThread();
+		MultiThread m2 = new MultiThread();
+		MultiThread m3 = new MultiThread();
+		m1.start();
+		m2.start();
+		m3.start();
+		for(int i=0;i<5;i++) 
+		{
+			m2.yield();
+			System.out.println(Thread.currentThread().getName());
+		}
+	}
+	public void run() {
+		System.out.println(Thread.currentThread().getName());
+	}
+}
+Output:
+Thread-0
+Thread-1
+Thread-2
+main
+main
+main
+main
+main
+(order may vary)
+________________________________________
+12. What is the output of the following code?
+class Test implements Runnable
+{
+	@Override
+	public void run() {
+		Thread thread = Thread.currentThread();
+		System.out.println(thread.getState());
+	}
+}
+public class MultiThread
+{
+	public static void main(String[] args) {
+		Test nit = new Test();
+		nit.run();
+	}
+}
+Output:
+RUNNABLE
+Explanation:
+•	run() directly → main thread still running.
+________________________________________
+13. What is the output of the following code?
+class Test implements Runnable
+{
+	@Override
+	public void run() {
+		Thread thread = Thread.currentThread();
+		thread.stop();
+		System.out.println(thread.getState());
+	}
+}
+public class MultiThread
+{
+	public static void main(String[] args) {
+		Test nit = new Test();
+		nit.run();
+	}
+}
+Output:
+Exception in thread "main" java.lang.ThreadDeath
+Explanation:
+•	thread.stop() forcibly kills thread, throws ThreadDeath.
+________________________________________
+14. What is the output of the following code?
+class Test implements Runnable
+{
+	public void run() {
+		Thread thread = Thread.currentThread();
+		Thread nit = thread.currentThread();
+		System.out.println(nit.getName());
+	}
+}
+public class MultiThread
+{
+	public static void main(String[] args) {
+		Test nit = new Test();
+		Thread thread = new Thread(nit);
+	}
+}
+Output:
+(no output)
+Explanation:
+•	Thread object created, but not started.
+________________________________________
+15. What is the output of the following code?
+class Test implements Runnable
+{
+	public void run() {
+		Thread thread = Thread.currentThread();
+		Thread nit = thread.currentThread();
+		System.out.println(nit.getName());
+	}
+}
+public class MultiThread
+{
+	public static void main(String[] args) {
+		Test nit = new Test();
+		Thread thread = new Thread(nit);
+		thread.start();
+	}
+}
+Output:
+Thread-0
+________________________________________
+16. What is the output of the following code?
+class Test implements Runnable
+{
+	public void run() {
+		Thread thread = Thread.currentThread();
+		Thread nit = thread.currentThread();
+		System.out.println(nit.getName());
+	}
+}
+public class MultiThread
+{
+	public static void main(String[] args) {
+		Test nit = new Test();
+		Thread thread = new Thread(nit);
+		thread.setName("NareshIT");
+		thread.start();
+	}
+}
+Output:
+NareshIT
+________________________________________
+17. What is the output of the following code?
+public class MultiThread 
+{
+	public static void main(String[] args) {
+		Thread nit = new Thread();
+		System.out.println(nit.MIN_PRIORITY+" "+nit.MAX_PRIORITY+" "+nit.NORM_PRIORITY);
+	}
+}
+Output:
+1 10 5
+________________________________________
+18. What is the output of the following code?
+public class MultiThread 
+{
+	public static void main(String[] args) {
+		Thread nit = new Thread();
+		System.out.println(nit.MIN_PRIORITY+nit.MAX_PRIORITY+nit.NORM_PRIORITY);
+	}
+}
+Output:
+16
+________________________________________
+19. What is the output of the following code?
+class Test implements Runnable
+{
+	public void run()
+	{
+		for(int i=0; i<2; i++)
+		System.out.println(Thread.currentThread().getName()+" ");
+		System.out.println();
+	}
+}
+class Test20
+{
+	public static void main(String[] args) 
+	{
+		Test t = new Test();
+		Thread t1 = new Thread();
+		Thread t2 = new Thread(t,"J2EE");
+		Thread t3 = new Thread(t,"J2ME");
+		t1.start();t2.start();t3.start();
+	}
+}
+Output:
+J2EE 
+J2ME
+(t1 has no target so doesn't print.)
+________________________________________
+20. What is the output of the following code?
+public class Test27 extends Thread
+{
+	public static void main(String[] args) 
+	{
+		try
+		{
+			Thread t= new Thread(new Test27(),"Rahul");
+			Thread t1= new Thread(new Test27(),"Ravi");
+			t.start(); t1.start();
+		}
+		catch (Exception e)
+		{
+			System.out.println("e");
+		}
+	}
+	public void run()
+	{
+		for(int i=0; i<2; i++)
+		{
+			try
+			{
+				Thread.sleep(500);
+			}
+			catch (Exception e)
+			{
+				System.out.println("e2");
+			}
+			System.out.println(Thread.currentThread().getName()+" ");
+		}
+	}
+}
+Output:
+Rahul
+Ravi
+Rahul
+Ravi
+(Order may vary)
+
+
