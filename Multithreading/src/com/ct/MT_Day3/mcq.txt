@@ -1,0 +1,26 @@
+🧠 MultiThreading Questions with Answers
+________________________________________
+1. What is the output of the following code?
+public class MultiThread implements Runnable
+{
+	public static void main(String[] args) throws InterruptedException {
+		Thread thread = new Thread(new MultiThread());
+		thread.start();
+		System.out.print("nit ");
+		thread.join();
+		System.out.println("google ");
+	}
+	@Override
+	public void run() {
+		System.out.println("NareshIT");
+	}
+}
+Output:
+nit NareshIT
+google 
+Explanation:
+•	main thread prints nit .
+•	thread.start() runs run(), prints NareshIT.
+•	thread.join() waits for it to finish.
+•	Then prints google .
+________________________________________
