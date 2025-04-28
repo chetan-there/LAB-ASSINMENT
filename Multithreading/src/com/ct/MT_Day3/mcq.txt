@@ -106,3 +106,22 @@ Exception in thread "main" java.lang.IllegalThreadStateException
 Explanation:
 •	Same thread nit started multiple times → not allowed.
 ________________________________________
+5. What is the output of the following code?
+public class MultiThread extends Thread
+{
+	public void run() {
+		System.out.print(Thread.currentThread().getId()+" ");
+	}
+	public static void main(String[] args) {
+		for(int i=0;i<10;i++)
+		{
+			MultiThread nit = new MultiThread();
+			nit.start();
+		}
+	}
+}
+Output:
+(thread IDs, 10 different IDs printed)
+Explanation:
+•	10 new threads started, different IDs printed.
+________________________________________
