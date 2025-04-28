@@ -56,3 +56,34 @@ Explanation:
 •	start() prints "Start", then calls super.start().
 •	run() prints "Run", but super.run() again causes problem inside the thread lifecycle → exception occurs.
 ________________________________________
+3. What is the output of the following code?
+class Test extends Thread
+{
+	int a;
+	public void run() {
+		a++;
+	}
+}
+public class MultiThread
+{
+	public static void main(String[] args) {
+		Test test = new Test();
+		test.run();
+		System.out.println(test.a);
+		test.start();
+		System.out.println(test.a);
+		System.out.println(test.isAlive());
+		System.out.println(test.getName());
+	}
+}
+Output:
+1
+1
+true
+Thread-0
+Explanation:
+•	test.run() (no thread) increments a=1.
+•	test.start() starts thread again.
+•	isAlive() true during thread running.
+•	Default name Thread-0.
+________________________________________
