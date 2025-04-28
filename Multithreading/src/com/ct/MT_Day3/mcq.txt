@@ -24,3 +24,35 @@ Explanation:
 •	thread.join() waits for it to finish.
 •	Then prints google .
 ________________________________________
+2. What is the output of the following code?
+class Test extends Thread
+{
+	@Override
+	public void run() {
+		System.out.println("Run");
+		super.run();
+	}
+	@Override
+	public synchronized void start() {
+		System.out.println("Start");
+		super.start();
+	}
+}
+public class MultiThread
+{
+	public static void main(String[] args) {
+		nit();
+	}
+	static public void nit() {
+		Test test = new Test();
+		test.start();
+	}
+}
+Output:
+Start
+Run
+Exception in thread "main" java.lang.IllegalThreadStateException
+Explanation:
+•	start() prints "Start", then calls super.start().
+•	run() prints "Run", but super.run() again causes problem inside the thread lifecycle → exception occurs.
+________________________________________
