@@ -87,3 +87,22 @@ Explanation:
 •	isAlive() true during thread running.
 •	Default name Thread-0.
 ________________________________________
+4. What is the output of the following code?
+public class MultiThread extends Thread
+{
+	public void run() {
+		System.out.println(Thread.currentThread().getId());
+	}
+	public static void main(String[] args) {
+		MultiThread nit = new MultiThread();
+		for(int i=0;i<10;i++)
+		{
+			nit.start();
+		}
+	}
+}
+Output:
+Exception in thread "main" java.lang.IllegalThreadStateException
+Explanation:
+•	Same thread nit started multiple times → not allowed.
+________________________________________
