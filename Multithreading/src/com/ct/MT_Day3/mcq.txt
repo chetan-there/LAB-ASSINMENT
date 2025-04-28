@@ -171,3 +171,23 @@ mainmainmainmainmainmainmainmainmainmain
 Explanation:
 •	run() called manually → no threading.
 ________________________________________
+8. What is the output of the following code?
+public class MultiThread implements Runnable
+{
+	Thread thread;
+	public MultiThread() {
+		thread = new Thread(this);
+		thread.start();
+	}
+	public void run() {
+		System.out.println(thread);
+	}	
+	public static void main(String[] args) {
+		new MultiThread();
+	}
+}
+Output:
+Thread[Thread-0,5,main]
+Explanation:
+•	New thread started, default name and priority printed.
+________________________________________
