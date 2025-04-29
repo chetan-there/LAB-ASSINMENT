@@ -1,8 +1,14 @@
 package com.ct.MT_Day4.OLA;
 
-public class PaymentProcessing extends Thread{
+class PaymentProcessing extends Thread {
     @Override
     public void run() {
-        super.run();
+        try {
+            System.out.println("Processing payment...");
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println("Payment successful!");
     }
 }
