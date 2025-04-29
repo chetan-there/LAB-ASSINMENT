@@ -1,5 +1,5 @@
 package com.ct.MT_Day4.OLA;
 
-public class DriverAssignment {
+public class DriverAssignment extends Thread{
     
 }
