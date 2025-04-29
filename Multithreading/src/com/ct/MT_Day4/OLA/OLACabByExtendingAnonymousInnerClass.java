@@ -1,4 +1,4 @@
-package com.ct.MT_Day4.OLA;
+// package com.ct.MT_Day4.OLA;
 
 public class OLACabByExtendingAnonymousInnerClass {
     public static void main(String[] args) {
