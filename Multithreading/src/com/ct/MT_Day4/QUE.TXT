@@ -1,0 +1,73 @@
+Develop a scenario based program by using Multithreading for OLA cab booking
+process
+
+Create 6 BLC classes which extending from Thread OR Anonymous inner class
+approach which are as follows :
+
+1) RideRequest
+2) DriverAssignment
+3) FareCalculation
+4) LiveTracking
+5) PaymentProcessing   
+6) RatingSystem
+
+Instruction :
+-------------
+Override run() method in all the above classes
+
+a) run() method implementation for RideRequest class :
+   It should print a message "User requested a ride...". User should wait
+   for 2 seconds, after that, It should print a message "Searching for nearby drivers..."
+   
+b) run() method implementation for DriverAssignment class
+   It should wait for 3 seconds and then print a message "Driver found and assigned!"
+   
+c) run() method implementation for FareCalculation class
+   It should print a message "Calculating estimated fare...", Here Thread
+   should wait for 1.5 second and then it should print "Estimated fare: 135.75 RS."
+
+d) run() method implementation for LiveTracking class
+   Here you should write the logic to update the ride location in % [See the
+   output Test cases for more details]
+   After that it should print a message "Ride Completed".
+    
+e) run() method implementation for PaymentProcessing class :
+   It should print a message "Processing payment..." Here Thread should 
+   wait for 2 seconds then It should print "Payment successful!"
+
+f) run() method implementation for RatingSystem class :  
+   It should print a message "Requesting user rating...". Here Thread should
+   wait for 1 second and It should print "User rated the ride: 5 star"
+
+
+ 
+ Create an ELC class called OlaRidingApp.
+ 
+ Inside main method Create the object for all 6 six classes using Ordinary
+ Or Anonymous inner class approach :
+     
+  Instruction :
+  
+  a) start RideRequest and FareCalculation thread together
+  b) call join() method on RideRequest thread
+  
+  Note : In the same use start() and join() to get the following output : 
+       
+  
+  Test Cases for Output :
+  ------------------------
+  User requested a ride...
+	Calculating estimated fare...
+	Estimated fare: 135.75 RS.
+	Searching for nearby drivers...
+	Driver found and assigned!
+	Updating ride location... 20% completed
+	Updating ride location... 40% completed
+	Updating ride location... 60% completed
+	Updating ride location... 80% completed
+	Updating ride location... 100% completed
+	Ride completed!
+	Processing payment...
+	Payment successful!
+	Requesting user rating...
+	User rated the ride: 5 star
