@@ -108,3 +108,32 @@ class Demo30 {
 this is n() method
 this is m() method
 ________________________________________
+✅ Q4
+✅ Code:
+class Tester {
+    synchronized void hit(long n) {
+        for (int i = 1; i < 3; i++)
+            System.out.print(n + "-" + i + " ");
+    }
+}
+
+public class Demo31 implements Runnable {
+    static Tester pp2 = new Tester();
+
+    public static void main(String[] args) {
+        new Thread(new Demo31()).start();
+        new Thread(new Demo31()).start();
+    }
+
+    public void run() {
+        pp2.hit(Thread.currentThread().getId());
+    }
+}
+✅ Explanation:
+•	Two threads share a common object pp2.
+•	hit() is synchronized, so only one thread accesses it at a time.
+•	Output will be two separate sequences, one per thread.
+✅ Output:
+<Thread-ID>-1 <Thread-ID>-2 <Thread-ID>-1 <Thread-ID>-2 
+(Actual thread IDs will vary)
+________________________________________
