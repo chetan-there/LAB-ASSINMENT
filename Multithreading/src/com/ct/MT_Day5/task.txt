@@ -1,4 +1,3 @@
-
 MCQs :
 ------
 Q1)
@@ -26,6 +25,9 @@ public class Exam {
         task2.join();
     }
 }
+
+answer==> Task Completed by :Thread-0
+          Task Completed by :Thread-1
 
 Q2)
 class Exam {
