@@ -34,3 +34,46 @@ Task Completed by :Thread-0
 Task Completed by :Thread-1
 (Note: Output order may vary)
 ________________________________________
+✅ Q2
+✅ Code:
+class Exam {
+    public static void main(String[] args) throws InterruptedException {
+        final Object lock = new Object();
+
+        Thread t1 = new Thread(() -> {
+            synchronized (lock) {
+                try {
+                    System.out.println("Waiting for Response");
+                    lock.wait();
+                } catch (InterruptedException e) {
+                    System.out.println("Interrupted");
+                }
+            }
+        });
+
+        Thread t2 = new Thread(() -> {
+            synchronized (lock) {
+                lock.notify();
+                System.out.println("Sending Notification");
+            }
+        });
+
+        t1.start();
+        t2.start();
+
+        t1.join();
+        t2.join();
+        System.out.println("Completed");
+    }
+}
+✅ Explanation:
+•	t1 waits on lock and releases it.
+•	t2 notifies lock, waking up t1.
+•	Proper wait/notify coordination used on the same object.
+•	join() ensures main waits for both threads.
+✅ Output:
+Waiting for Response
+Sending Notification
+Completed
+(Note: Order of Sending Notification and Completed may vary slightly)
+________________________________________
