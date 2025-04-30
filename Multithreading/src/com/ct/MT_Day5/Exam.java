@@ -1,25 +1,32 @@
 package com.ct.MT_Day5;
 
-class Task extends Thread {
-    public void run() {
-        synchronized (this) {
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            System.out.println("Task Completed by :"+Thread.currentThread().getName());
-        }
-    }
-}
-
-public class Exam {
+class Exam {
     public static void main(String[] args) throws InterruptedException {
-        Task task1 = new Task();
-        Task task2 = new Task();
-        task1.start();
-        task2.start();
-        task1.join();
-        task2.join();
+        final Object lock = new Object();
+
+        Thread t1 = new Thread(() -> {
+            synchronized (lock) {
+                try {
+					System.out.println("Waiting for Response");
+                    lock.wait();
+                } catch (InterruptedException e) {
+                    System.out.println("Interrupted");
+                }
+            }
+        });
+
+        Thread t2 = new Thread(() -> {
+            synchronized (lock) {
+                lock.notify();
+				System.out.println("Sending Notification");
+            }
+        });
+
+        t1.start();
+        t2.start();
+
+        t1.join();
+        t2.join();
+		System.out.println("Completed");
     }
 }
