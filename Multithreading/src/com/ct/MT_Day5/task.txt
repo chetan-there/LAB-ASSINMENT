@@ -77,3 +77,34 @@ Sending Notification
 Completed
 (Note: Order of Sending Notification and Completed may vary slightly)
 ________________________________________
+✅ Q3
+✅ Code:
+class Reentrant {
+    public synchronized void m() {
+        n();
+        System.out.println("this is m() method");
+    }
+
+    public synchronized void n() {
+        System.out.println("this is n() method");
+    }
+}
+
+class Demo30 {
+    public static void main(String args[]) {
+        final Reentrant re = new Reentrant();
+        Thread t1 = new Thread() {
+            public void run() {
+                re.m();
+            }
+        };
+        t1.start();
+    }
+}
+✅ Explanation:
+•	m() is synchronized and calls another synchronized method n() of the same object.
+•	Java allows reentrant locks, so the thread can re-enter the lock.
+✅ Output:
+this is n() method
+this is m() method
+________________________________________
