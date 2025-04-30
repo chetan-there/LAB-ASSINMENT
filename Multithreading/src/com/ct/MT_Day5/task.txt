@@ -183,3 +183,162 @@ Thread1 is holding Pen
 Thread2 is holding Paper
 (May hang due to deadlock — no further output)
 ________________________________________
+✅ Q6
+✅ Code:
+class Job extends Thread {
+    private Integer number = 0;
+
+    public void run() {
+        synchronized (this) {
+            for (int i = 1; i < 100; i++) {
+                number++;
+            }
+            notify();
+        }
+    }
+
+    public Integer getNumber() {
+        return number;
+    }
+}
+
+public class Demo45 {
+    public static void main(String[] args) throws Exception {
+        Job thread = new Job();
+        thread.start();
+
+        synchronized (thread) {
+            thread.wait();
+        }
+
+        System.out.println(thread.getNumber());
+    }
+}
+✅ Explanation:
+•	wait() is called on thread only after acquiring lock on it.
+•	notify() is called after incrementing number.
+•	Output is final value of number.
+✅ Output:
+99
+________________________________________
+✅ Q7
+✅ Code:
+public class Demo48 {
+    public static void main(String[] args) {
+        System.out.print("A ");
+        new Object().notifyAll();
+        System.out.println("B");
+    }
+}
+✅ Explanation:
+•	notifyAll() is called without holding lock on that object.
+•	Results in IllegalMonitorStateException.
+✅ Output:
+A Exception in thread "main" java.lang.IllegalMonitorStateException
+    at java.base/java.lang.Object.notifyAll(Native Method)
+    at Demo48.main(Demo48.java:4)
+________________________________________
+✅ Q8
+✅ Code:
+class InterruptDemo extends Thread {
+    public void run() {
+        try {
+            Thread.sleep(1000);
+            System.out.println("task");
+        } catch (InterruptedException e) {
+            throw new RuntimeException(" My Thread interrupted..." + e);
+        }
+    }
+}
+
+class demo53 {
+    public static void main(String args[]) {
+        InterruptDemo t1 = new InterruptDemo();
+        t1.start();
+        try {
+            t1.interrupt();
+        } catch (Exception e) {
+            System.out.println("Exception handled " + e);
+        }
+    }
+}
+✅ Explanation:
+•	Thread is interrupted during sleep.
+•	Catches InterruptedException and throws RuntimeException.
+✅ Output:
+Exception in thread "Thread-0" java.lang.RuntimeException: My Thread interrupted...java.lang.InterruptedException: sleep interrupted
+    at InterruptDemo.run(demo53.java:7)
+________________________________________
+✅ Q9
+✅ Code:
+class Demo56 extends Thread {
+    public void run() {
+        try {
+            Thread.sleep(100);
+        } catch (Exception e) {
+            System.out.println("Thread terminated");
+        }
+        for (int i = 1; i <= 5; i++)
+            System.out.println(i);
+    }
+
+    public static void main(String args[]) {
+        Demo56 t1 = new Demo56();
+        t1.start();
+
+        t1.interrupt();
+    }
+}
+✅ Explanation:
+•	interrupt() is called after start().
+•	Since sleep() is called, it throws InterruptedException.
+•	Catch block prints, then continues.
+✅ Output:
+Thread terminated
+1
+2
+3
+4
+5
+________________________________________
+✅ Q10
+✅ Code:
+class Demo59 {
+    public static void main(String[] args) {
+        ThreadB b = new ThreadB();
+        b.start();
+
+        synchronized (Demo59.class) {
+            try {
+                System.out.println("Waiting for b to complete...");
+                b.wait();
+            } catch (InterruptedException e) {
+            }
+            System.out.println("Total is :" + b.total);
+        }
+    }
+}
+
+class ThreadB extends Thread {
+    int total;
+
+    public void run() {
+        synchronized (this) {
+            for (int i = 0; i < 100; i++) {
+                total = total + i;
+            }
+            System.out.println("Completed I am going to awake him");
+            notify();
+        }
+    }
+}
+✅ Explanation:
+•	Illegal: wait() called on b, but synchronized block is on Demo59.class.
+•	Results in IllegalMonitorStateException.
+✅ Output:
+Waiting for b to complete...
+Exception in thread "main" java.lang.IllegalMonitorStateException
+    at java.lang.Object.wait(Native Method)
+    at Demo59.main(Demo59.java:9)
+Completed I am going to awake him
+
