@@ -25,7 +25,6 @@ public class PetrolPumpSimulation {
                 System.out.println("Thread " + i + " was interrupted.");
             }
         }
-
         System.out.println("All cars have completed refueling.");
     }
 }
