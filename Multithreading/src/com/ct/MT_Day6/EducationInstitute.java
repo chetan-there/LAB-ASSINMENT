@@ -19,7 +19,10 @@ public class EducationInstitute {
     }
 
     public void enrollStudentInCourse(int courseId, String studentName) {
-        System.out.println("");
+        for (Course course : courses) {
+            if (course.getCourseId() == courseId) {
+                System.out.println(studentName + " hs enrolled in the course: " + course.getCourseName());
+            }
+        }
     }
-
 }

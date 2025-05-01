@@ -9,7 +9,7 @@ public class Offer {
     }
 
     public String getOfferText(){
-        return "";
+        return offerText;
     }
     
 }
