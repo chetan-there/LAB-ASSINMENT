@@ -17,6 +17,6 @@ public class RestaurantSystem {
 
         // Start the threads
         waiter.start(); // Waiter places the order
-        chef.start();   // Chef prepares the order
+        chef.start(); // Chef prepares the order
     }
 }
