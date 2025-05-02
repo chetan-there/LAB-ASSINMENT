@@ -11,7 +11,6 @@ public class Restaurant {
         this.name = name;
     }
 
-    
     // Getter method for restaurant name
     public String getRestaurantName() {
         return name;
