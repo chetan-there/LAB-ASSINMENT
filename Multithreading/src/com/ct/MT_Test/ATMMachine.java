@@ -34,4 +34,16 @@ class Drawer extends Thread {
         this.account = account;
     }
 
-  
+    @Override
+    public void run() {
+        int[] withdrawals = {100, 200}; // Amounts to withdraw
+        for (int amount : withdrawals) {
+            account.withdraw(amount);
+            try {
+                Thread.sleep(1000); // 1 sec delay
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+    }
+}
