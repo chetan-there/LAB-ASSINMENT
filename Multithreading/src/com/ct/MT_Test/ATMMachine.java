@@ -47,3 +47,11 @@ class Drawer extends Thread {
         }
     }
 }
+
+// Depositor Thread Class
+class Depositor extends Thread {
+    private final Account account;
+
+    public Depositor(Account account) {
+        this.account = account;
+    }
