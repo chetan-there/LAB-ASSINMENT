@@ -27,3 +27,11 @@ class Account {
 }
 
 // Drawer Thread Class
+class Drawer extends Thread {
+    private final Account account;
+
+    public Drawer(Account account) {
+        this.account = account;
+    }
+
+  
