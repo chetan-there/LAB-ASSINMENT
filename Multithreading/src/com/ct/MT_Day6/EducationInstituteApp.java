@@ -23,5 +23,11 @@ public class EducationInstituteApp {
         // Start the student threads (runs concurrently)
         virat.start();
         dhoni.start();
+        try {
+            virat.join();
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+       
     }
 }
