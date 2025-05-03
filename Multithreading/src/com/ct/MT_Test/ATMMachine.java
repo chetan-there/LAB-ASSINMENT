@@ -69,3 +69,15 @@ class Depositor extends Thread {
         }
     }
 }
+
+// Main Execution Class
+public class ATMMachine {
+    public static void main(String[] args) {
+        Account account = new Account();
+        Drawer drawer = new Drawer(account);
+        Depositor depositor = new Depositor(account);
+
+        drawer.start();
+        depositor.start();
+    }
+}
