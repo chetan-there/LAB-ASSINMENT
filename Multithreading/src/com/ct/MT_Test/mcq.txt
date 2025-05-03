@@ -1,0 +1,276 @@
+1. Which method is used to pause the execution of the current thread for a specified time?
+A) wait()
+B) sleep()
+C) yield()
+D) suspend()
+✅ Correct Answer: B) sleep()
+💡 Causes the current thread to pause for a specified time.
+________________________________________
+2. What is the output of the code?
+class A implements Runnable {
+    public void run() {
+        System.out.println("run-a");
+    }
+}
+public class Test {
+    public static void main(String[] args) {
+        A a = new A();
+        Thread t = new Thread(a);
+        t.start();
+    }
+}
+A) Compilation error
+B) Runtime error
+C) run-a
+D) Compilation succeeds but Runtime Exception
+✅ Correct Answer: C) run-a
+💡 Runnable is implemented correctly and passed to Thread.
+________________________________________
+3. Which method is used to check if a thread is alive?
+A) isAlive()
+B) alive()
+C) checkAlive()
+D) stillAlive()
+✅ Correct Answer: A) isAlive()
+💡 Returns true if thread is still running or not terminated.
+________________________________________
+4. Which method is used to interrupt a thread in Java?
+A) break()
+B) stop()
+C) interrupt()
+D) kill()
+✅ Correct Answer: C) interrupt()
+💡 Sends a signal to stop the thread's execution.
+________________________________________
+5. Output of CheckingMyDaemonThread?
+A) I am user thread and I am working...
+B) I am daemon thread...
+C) Both user and daemon thread outputs
+D) Only "I am user thread..."
+✅ Correct Answer: A)
+💡 setDaemon(true) called after start() — thread runs as user thread.
+________________________________________
+6. What does the yield() method do?
+A) Stops thread execution
+B) Terminates the thread
+C) Hints the scheduler to switch to another thread
+D) Pauses forever
+✅ Correct Answer: C)
+💡 It gives up the CPU so other threads of same priority can execute.
+________________________________________
+7. Output of the program?
+class MyThread extends Thread {
+    public void run() {
+        System.out.println("thread running....");
+    }
+    public static void main(String args[]) {
+        MyThread obj = new MyThread();
+        obj.start();
+    }
+}
+A) Compile-time error
+B) thread running....
+C) Runtime error
+D) Nothing happens
+✅ Correct Answer: B)
+💡 start() invokes a new thread which prints the message.
+________________________________________
+8. Output of program with two threads and loop
+class Test extends Thread {
+    public void run() {
+        for (int i = 0; i <= 3; i++) {
+            System.out.println("Hello Welcome here.." + i);
+        }
+    }
+}
+class NewPlatForm1 {
+    public static void main(String[] args) {
+        Test t = new Test();
+        t.start();
+        Test t2 = new Test();
+        t2.start();
+    }
+}
+A) Ordered output from 0 to 3
+B) Jumbled output from 0 to 3
+C) Compile-time error
+D) Runtime error
+✅ Correct Answer: B)
+💡 Threads run concurrently, so outputs are jumbled.
+________________________________________
+9. What happens when wait() is called inside a synchronized method?
+A) Compilation error
+B) wait() releases the lock
+C) wait() holds the lock
+D) wait() doesn't work
+✅ Correct Answer: B)
+💡 wait() releases the lock and pauses the thread.
+________________________________________
+10. Difference between a process and a thread?
+A) No difference
+B) A thread is heavier
+C) A process is a single unit of execution; a thread is part of a process
+D) Threads cannot run in parallel
+✅ Correct Answer: C)
+💡 Threads are lightweight parts of a process.
+________________________________________
+11. Which method causes a thread to temporarily pause and allow others to execute?
+A) wait()
+B) pause()
+C) yield()
+D) notify()
+✅ Correct Answer: C)
+💡 yield() lets the current thread pause voluntarily.
+________________________________________
+12. Which is NOT a valid thread method?
+A) start()
+B) run()
+C) go()
+D) sleep()
+✅ Correct Answer: C) go()
+💡 No method go() exists in Thread.
+________________________________________
+13. What will happen if we call start() twice on the same thread?
+A) Two threads will run
+B) No problem
+C) RuntimeException
+D) Compile-time error
+✅ Correct Answer: C) RuntimeException
+💡 IllegalThreadStateException occurs.
+________________________________________
+14. Which method registers a thread for execution?
+A) run()
+B) execute()
+C) start()
+D) begin()
+✅ Correct Answer: C) start()
+💡 start() invokes the thread and calls run() internally.
+________________________________________
+15. Which statement about threads is true?
+A) Thread cannot be created using Runnable
+B) Thread is always daemon
+C) Thread can be created by extending Thread class
+D) Thread cannot be stopped
+✅ Correct Answer: C)
+💡 Threads can be created by extending Thread or implementing Runnable.
+________________________________________
+16. Which method is used to wake up a waiting thread?
+A) start()
+B) notify()
+C) sleep()
+D) yield()
+✅ Correct Answer: B) notify()
+💡 notify() wakes up one waiting thread.
+________________________________________
+17. Which keyword ensures mutual exclusion?
+A) volatile
+B) static
+C) synchronized
+D) transient
+✅ Correct Answer: C) synchronized
+💡 Used to lock objects/methods for thread safety.
+________________________________________
+18. What is the state of thread after calling start() but before run()?
+A) NEW
+B) TERMINATED
+C) RUNNABLE
+D) BLOCKED
+✅ Correct Answer: C) RUNNABLE
+💡 Thread is ready and waiting to be scheduled.
+________________________________________
+19. Which method stops the thread permanently?
+A) stop()
+B) interrupt()
+C) terminate()
+D) break()
+✅ Correct Answer: A) stop()
+💡 Deprecated, but used to forcibly stop a thread.
+________________________________________
+20. Which is the safest way to stop a thread?
+A) stop()
+B) kill()
+C) interrupt() and check interruption flag
+D) System.exit(0)
+✅ Correct Answer: C)
+💡 Use interrupt() + check isInterrupted() inside run().
+________________________________________
+21. Can two threads execute a synchronized method on the same object?
+A) Yes, always
+B) No
+C) Yes, if from different classes
+D) Yes, if one is daemon
+✅ Correct Answer: B)
+💡 Only one thread can access a synchronized method of an object at a time.
+________________________________________
+22. Which method blocks until the thread finishes execution?
+A) sleep()
+B) wait()
+C) join()
+D) yield()
+✅ Correct Answer: C) join()
+💡 join() waits for the thread to die.
+________________________________________
+23. Can a thread be restarted once it is dead?
+A) Yes
+B) No
+C) Only with reset()
+D) Yes, if daemon
+✅ Correct Answer: B)
+💡 Once a thread has completed, it cannot be restarted.
+________________________________________
+24. What happens if we don’t override run()?
+A) Compile-time error
+B) Default run() is used
+C) Nothing happens
+D) Runtime Exception
+✅ Correct Answer: B)
+💡 If run() is not overridden, default implementation does nothing.
+________________________________________
+25. What is Thread Priority range in Java?
+A) 0-5
+B) 1-10
+C) 0-9
+D) 1-5
+✅ Correct Answer: B) 1-10
+💡 1 (MIN_PRIORITY) to 10 (MAX_PRIORITY)
+________________________________________
+26. Which method sets thread priority?
+A) setLevel()
+B) priority()
+C) setPriority()
+D) definePriority()
+✅ Correct Answer: C) setPriority()
+💡 Sets the thread's priority.
+________________________________________
+27. Which thread is created automatically by JVM?
+A) User thread
+B) Main thread
+C) Daemon thread
+D) Garbage collector thread
+✅ Correct Answer: B) Main thread
+💡 Main thread is the first thread created by JVM.
+________________________________________
+28. Which is true about daemon threads?
+A) They block JVM from exiting
+B) They are for long tasks
+C) They run in background and don’t prevent JVM from exiting
+D) Same as user threads
+✅ Correct Answer: C)
+💡 JVM exits when only daemon threads remain.
+________________________________________
+29. Can we make the main thread a daemon?
+A) Yes
+B) No
+C) Only in Java 11
+D) Only if JVM allows
+✅ Correct Answer: B)
+💡 main thread cannot be set as daemon.
+________________________________________
+30. What happens if we call wait() without synchronized block?
+A) Runs fine
+B) Compile error
+C) IllegalMonitorStateException
+D) Waits indefinitely
+✅ Correct Answer: C) IllegalMonitorStateException
+💡 wait() must be inside a synchronized block or it throws this exception.
+
