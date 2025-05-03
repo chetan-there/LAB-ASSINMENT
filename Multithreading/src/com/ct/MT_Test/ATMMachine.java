@@ -55,3 +55,17 @@ class Depositor extends Thread {
     public Depositor(Account account) {
         this.account = account;
     }
+
+    @Override
+    public void run() {
+        int[] deposits = {300}; // Amounts to deposit
+        for (int amount : deposits) {
+            account.deposit(amount);
+            try {
+                Thread.sleep(1000); // 1 sec delay
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+    }
+}
