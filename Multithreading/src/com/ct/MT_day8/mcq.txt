@@ -609,6 +609,10 @@ public class Java8 {
     }
 }
 
+Answer ==>
+
+main
+5
 
 18.What is the output of the following code?
 class NIT extends Thread
