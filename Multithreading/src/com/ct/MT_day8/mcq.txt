@@ -742,6 +742,11 @@ public class Java8 {
     }
 }
 
+Answer ==>
+
+Congratulations Mr/Mrs Naresh
+Congratulations Mr/Mrs Ravi
+
 21) Can we make main thread as a Daemon Thread
 
 public class IsDaemon
@@ -752,3 +757,7 @@ public class IsDaemon
       t.setDaemon(true);
    }
 }
+
+Answer ==>
+
+ You are trying to set the main thread (which is already running) as
