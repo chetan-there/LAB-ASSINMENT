@@ -414,6 +414,15 @@ public class Java8 {
     }
 }
 
+Answer==>
+
+15
+Thread-0
+17
+Thread-2
+16
+Thread-1
+
 12.Write a program to get default priority of thread?
 class NIT extends Thread
 {
