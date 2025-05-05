@@ -113,6 +113,28 @@ public class Java8 {
     }
 }
 
+Answer==>
+NareshIT1
+NareshIT2
+NareshIT1
+NareshIT1
+NareshIT2
+NareshIT1
+NareshIT1
+NareshIT2
+NareshIT1
+NareshIT1
+NareshIT1
+NareshIT2
+NareshIT1
+NareshIT1
+NareshIT2
+NareshIT2
+NareshIT2
+NareshIT2
+NareshIT2
+NareshIT2
+
 
 5. What is the output of the following code without override run() method using thread and setDaemon?
 public class Java8 extends Thread {
@@ -138,6 +160,11 @@ public class Java8 extends Thread {
 		
     }
 }
+
+Answer ==>
+
+Normal Thread Running
+
 
 6.What is the output of the following code to override run() method using thread and setDaemon?
 public class Java8 extends Thread {
@@ -169,6 +196,9 @@ public class Java8 extends Thread {
 		
     }
 }
+Answer ==>
+
+Normal Thread Running
 
 
 7.What is the output of the following code?
@@ -197,6 +227,19 @@ public class Java8 extends Thread {
 		java.display1();
     }
 }
+
+Answer ==>
+
+display
+display
+display
+display
+display
+Exception in thread "main" java.lang.IllegalMonitorStateException: current thread is not owner       
+        at java.base/java.lang.Object.wait(Native Method)
+        at java.base/java.lang.Object.wait(Object.java:338)
+        at com.ct.MT_day8.Java8.main(Java8.java:22)
+		
 
 8.	What is the output of the following code override without run() method and one class?
 public class Java8 extends Thread {
