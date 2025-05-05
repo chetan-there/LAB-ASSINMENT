@@ -586,6 +586,11 @@ public class Java8 {
     }
 }
 
+Answer==>
+
+It will give compile time error baecause we do not have the nit class 
+
+
 17.What is the output of the following code?
 class NIT extends Thread
 {
