@@ -1,18 +1,34 @@
 package com.ct.MT_day8;
 
-class NIT extends Thread
-{
+class TestSync {
+	public static synchronized void display(String name) {
+		System.out.println("Congratulations Mr/Mrs " + name);
+	}
+}
+
+class NIT extends Thread {
+
+	TestSync test;
+	String name;
+
 	@Override
 	public void run() {
-		System.out.println(currentThread().getName());
-		System.out.println(currentThread().getPriority());
+		test.display(name);
+	}
+
+	public NIT(TestSync test, String name) {
+		this.test = test;
+		this.name = name;
 	}
 }
 
 public class Java8 {
-	
+
 	public static void main(String[] args) throws InterruptedException {
-		NIT nit = new NIT();
-		nit.run();
-    }
+		TestSync test = new TestSync();
+		NIT nit = new NIT(test, "Naresh");
+		NIT nit1 = new NIT(test, "Ravi");
+		nit.start();
+		nit1.start();
+	}
 }

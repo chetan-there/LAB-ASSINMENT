@@ -634,6 +634,17 @@ public class Java8 {
     }
 }
 
+Answer ==>
+18
+24
+32
+28
+30
+26
+16
+22
+20
+34
 
 19.Write a program to Synchronized Thread in java?
 class TestSync
@@ -690,6 +701,10 @@ public class Java8 {
 		nit1.start();
     }
 }
+
+Answer==>
+5
+5
 
 20. Write a program to static Synchronized Thread in java?
 class TestSync
