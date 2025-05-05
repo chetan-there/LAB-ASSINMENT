@@ -445,6 +445,16 @@ public class Java8 {
     }
 }
 
+Answer ==>
+
+Thread-0
+5
+Thread-1
+5
+Thread-2
+5
+
+
 13.Write a program to get Normal priority of thread?
 class NIT extends Thread
 {
@@ -472,6 +482,14 @@ public class Java8 {
     }
 }
 
+Answer==>
+
+Thread-1
+Thread-2
+Thread-0
+5
+5
+5
 
 14.Write a program to get Minimum priority of thread?
 class NIT extends Thread
@@ -499,6 +517,18 @@ public class Java8 {
 		nit2.start();
     }
 }
+
+Answer==>
+
+Thread-1
+Thread-2
+1
+Thread-0
+1
+1
+
+
+
 
 15.Write a program to get Maximum priority of thread?
 class NIT extends Thread
