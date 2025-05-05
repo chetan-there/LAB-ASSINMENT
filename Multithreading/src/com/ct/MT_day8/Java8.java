@@ -15,9 +15,9 @@ public class Java8 {
 		NIT nit1 = new NIT();
 		NIT nit2 = new NIT();
 
-		nit.setPriority(Thread.MIN_PRIORITY);
-		nit1.setPriority(Thread.MIN_PRIORITY);
-		nit2.setPriority(Thread.MIN_PRIORITY);
+		nit.setPriority(Thread.MAX_PRIORITY);
+		nit1.setPriority(Thread.MAX_PRIORITY);
+		nit2.setPriority(Thread.MAX_PRIORITY);
 
 		nit.start();
 		nit1.start();

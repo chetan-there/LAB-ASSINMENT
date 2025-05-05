@@ -557,6 +557,15 @@ public class Java8 {
     }
 }
 
+Answer==>
+
+Thread-0
+Thread-2
+10
+Thread-1
+10
+10
+
 16.What is the output of the following code?
 public class Java8 {
 	
