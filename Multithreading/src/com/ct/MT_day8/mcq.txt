@@ -46,7 +46,19 @@ public class Java8 {
     }
 }
 
-3.Can Create Thread by using lambda function
+Answer==> 
+5
+true
+false
+1st Thread
+5
+2nd Thread
+
+
+3.How we Can Create Thread by using lambda function ?
+
+Answer==>
+
 public class Java8 {
 	public static void main(String[] args) {
 		new Thread(()-> 
