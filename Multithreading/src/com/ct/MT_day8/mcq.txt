@@ -239,7 +239,7 @@ Exception in thread "main" java.lang.IllegalMonitorStateException: current threa
         at java.base/java.lang.Object.wait(Native Method)
         at java.base/java.lang.Object.wait(Object.java:338)
         at com.ct.MT_day8.Java8.main(Java8.java:22)
-		
+
 
 8.	What is the output of the following code override without run() method and one class?
 public class Java8 extends Thread {
@@ -267,6 +267,19 @@ public class Java8 extends Thread {
 		java.display1();
     }
 }
+
+Answer ==>
+
+display
+display
+display
+display
+display
+display1
+display1
+display1
+display1
+display1
 
 9.What is the output of the following code override without run() method and Serial Execution?
 class NIT extends Thread
@@ -307,6 +320,17 @@ public class Java8 {
     }
 }
 
+Answer==>
+NIT Display
+NIT Display
+NIT Display
+NIT Display
+NIT Display
+NIT Display1
+NIT Display1
+NIT Display1
+NIT Display1
+NIT Display1
 
 10. What is the output of the following code override run() method and Parallel Execution?
 class NIT extends Thread
@@ -353,6 +377,19 @@ public class Java8 {
 		nit1.start();
     }
 }
+
+Answer==>
+
+NIT Display
+NIT Display1
+NIT Display
+NIT Display
+NIT Display1
+NIT Display
+NIT Display1
+NIT Display
+NIT Display1
+NIT Display1
 
 
 11.What is the output of the following code?
