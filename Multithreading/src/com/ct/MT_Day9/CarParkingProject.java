@@ -8,10 +8,9 @@ public class CarParkingProject {
         System.out.println("Total Available spots are :" + garage.getAvailableSpots());
 
         String[] cars = {
-            "Maruti Brezza", "Tata Naxon", "Mahindra BE6", "Kia Seltos", "Honda city",
-            "Toyota Fortuner", "Hundai i20"
+                "Maruti Brezza", "Tata Naxon", "Mahindra BE6", "Kia Seltos", "Honda city",
+                "Toyota Fortuner", "Hundai i20"
         };
-
         Thread[] threads = new Thread[cars.length];
         for (int i = 0; i < cars.length; i++) {
             threads[i] = new Thread(new Car(garage, cars[i]));
