@@ -165,7 +165,6 @@ Instructions:
 -> Simulate concurrent user interactions using threads by creating two threads (thread1 and thread2) with anonymous runnable instances representing the user interactions.
 
 
-
 Sample Output:
 
 Dose booked successfully for Ramesh
