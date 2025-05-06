@@ -16,7 +16,6 @@ public class CarParkingProject {
             threads[i] = new Thread(new Car(garage, cars[i]));
             threads[i].start();
         }
-
         for (Thread t : threads) {
             try {
                 t.join();
