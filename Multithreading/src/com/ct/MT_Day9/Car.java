@@ -16,6 +16,7 @@ public class Car implements Runnable {
         try {
             garage.parkCar(carName);
 
+            // Simulate random parking time
             Thread.sleep(new Random().nextInt(2000) + 1000);
 
             garage.freeSpot(carName);
