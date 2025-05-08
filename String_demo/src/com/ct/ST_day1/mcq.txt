@@ -41,6 +41,8 @@ public class StringHandling {
 A.	true
 B.	false
 
+Answer => B.false
+
 4.Choose the correct output of the following snippet 
 public class StringHandling {
 	public static void main(String[] args) {
@@ -51,6 +53,8 @@ A.	In line 1 create two objects and one reference variable
 B.	In line 1 create one object and one reference variable
 C.	In line 1 create two objects and two  reference variable
 D.	In line 1 create one objects and two reference variable
+
+Answer => B.In line 1 create one object and one reference variable
 
 5.What is the output of the following program
 public class StringHandling {
@@ -63,6 +67,8 @@ A.	NarEsh I Technologies
 B.	NarEsh 
 C.	Naresh I Technologies
 D.	NarEsh I TEchnologiEs
+
+Answer => A.NarEsh I Technologies
 
 6.What is the output of the following program
 public class StringHandling {
