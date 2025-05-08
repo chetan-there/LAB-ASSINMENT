@@ -215,6 +215,8 @@ B.	s
 C.	J
 D.	o
 
+Answer => B. s
+
 16.What is the output of the following code
 public class StringHandling {
 	public static void main(String[] args) {
@@ -229,6 +231,8 @@ A.	Compile time error
 B.	Run time error
 C.	N a r e s h   I   T e c h n o l o g i e s   J a v a
 D.	NareshITechnologiesJava
+
+Answer => B. Run time error {StringIndexOutOfBoundsException}
 
 17.Choose the correct output of the following snippet
 public class StringHandling {
