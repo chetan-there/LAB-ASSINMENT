@@ -187,6 +187,8 @@ B.	ArrayIndexOutOfBoundsException
 C.	IndexOutOfBoundsException
 D.	StringOutOfBoundsException
 
+Answer => A.StringIndexOutOfBoundsException
+
 14.What is the output of the following code
 public class StringHandling {
 	public static void main(String[] args) {
@@ -198,6 +200,8 @@ A.	T
 B.	s
 C.	I
 D.	h
+
+Answer => C. I
 
 15.What is the output of the following code
 public class StringHandling {
