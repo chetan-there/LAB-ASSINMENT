@@ -12,6 +12,8 @@ B.	fasle true
 C.	true true
 D.	false false
 
+Answer => C. true true
+
 
 2.What is the output of the following program
 public class StringHandling {
