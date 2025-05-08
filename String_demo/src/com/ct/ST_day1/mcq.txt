@@ -113,6 +113,8 @@ B.	false true
 C.	true true
 D.	false false
 
+Answer => B.false true
+
 9.What is the output of the following program
 public class StringHandling {
 	public static void main(String[] args) {
@@ -141,6 +143,8 @@ B. banana
 C. orange
 D. ,banana
 
+Answer => B. banana
+
 11.Choose the correct option for the following program
 public class StringHandling {
 	public static void main(String[] args) 
@@ -153,6 +157,8 @@ A. 3
 B. 4
 C. 2
 D. 1
+
+Answer => A. 3
 
 12.Choose the correct option for the following snippet
 public class StringHandling {
