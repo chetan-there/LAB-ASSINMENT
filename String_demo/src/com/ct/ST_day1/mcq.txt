@@ -83,6 +83,8 @@ B.	Welcome
 C.	Welcome NareshIT
 D.	NareshIT
 
+Answer => C.Welcome NareshIT
+
 7.What is the output of the following program
 public class StringHandling {
 	public static void main(String[] args) {
@@ -94,6 +96,8 @@ A.	NareshIT 10
 B.	Compile time error
 C.	NareshIT10
 D.	Run time error
+
+Answer => C.NareshIT10
 
 8.What is the output of the following program
 public class StringHandling {
