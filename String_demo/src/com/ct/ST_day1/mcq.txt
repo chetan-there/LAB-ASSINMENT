@@ -29,6 +29,8 @@ B.	16
 C.	14
 D.	17
 
+Answer => B.16
+
 3.What is the output of the following code
 public class StringHandling {
 	public static void main(String[] args) {
