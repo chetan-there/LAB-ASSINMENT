@@ -250,6 +250,8 @@ B.	Run time error
 C.	N a r e s h   I   T e c h n o l o g i e s   J a v a
 D.	NareshITechnologiesJava
 
+Answer => C.N a r e s h   I   T e c h n o l o g i e s   J a v a
+
 18.What is the output of the following code
 public class StringHandling {
 	public static void main(String[] args) {
@@ -264,6 +266,8 @@ B.	6 19 32
 C.	4 18 30
 D.	4 18 31
 
+Answer => A.5 19 31
+
 19.What is the output of the following code
 public class StringHandling {
 	public static void main(String[] args) 
@@ -276,6 +280,8 @@ A. true
 B. false
 C. Compilation error
 D. Runtime exception
+
+Answer => A. true [note : spaces considerd as blank area ]
 
 20.Choose the correct output of the following snippet
 public class StringHandling {	
