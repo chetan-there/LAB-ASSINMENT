@@ -1,7 +1,5 @@
 package com.ct.equals_demo;
 
-import java.util.Objects;
-
 public class ProductEquality {
     public static void main(String[] args) {
         Product p1 = new Product(101, "Laptop");
