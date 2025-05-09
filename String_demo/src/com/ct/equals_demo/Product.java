@@ -26,8 +26,9 @@ public class Product {
         return productId == product.productId && Objects.equals(productName, product.productName);
     }
 
+    // Override hashCode method to follow contract
     
-    @Override // Override hashCode method to follow contract
+    @Override 
     public int hashCode() {
         return Objects.hash(productId, productName);
     }
