@@ -1,4 +1,3 @@
-Let's solve each question one by one, providing the full question, the correct output, and a brief explanation below each.
 ________________________________________
 Q1
 public class Test45 extends Thread {
