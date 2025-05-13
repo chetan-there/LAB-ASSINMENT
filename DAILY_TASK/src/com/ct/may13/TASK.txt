@@ -1,0 +1,19 @@
+Assignemnt : 01
+---------------
+Program to describe Coffee shop application where we can provide 
+coffee type and coffee size.
+
+Define an enum for different types of coffee constant like cold coffee, Black coffee, milk coffee.
+
+Define an enum for different sizes of coffee like Small, Big and medium.
+
+Create one BLC class CoffeeOrder which contains two instance variables which are as follows :
+
+ private CoffeeType type;
+ private CoffeeSize size;
+
+ Create a parameterized constructor to initialize all fields.
+
+ create a non static method getOrderDetails which will return the type of coffee and size of coffee in String format.
+
+ Create an ELC class to print different types of Coffee order by customer using getOrderDetails() methods.
