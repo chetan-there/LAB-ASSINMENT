@@ -11,7 +11,7 @@ public class even_odd {
             System.out.println("even");
         } else
             System.out.println("odd");
-
+        sc.close();
     }
 
 }
