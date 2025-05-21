@@ -1,4 +1,4 @@
-package com.ct.abstract_1April_1;
+package com.ct.abstraction_day1;
 
 public class Test {
     public static void main(String[] args) {

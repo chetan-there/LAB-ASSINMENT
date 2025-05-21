@@ -1,3 +1,5 @@
+package com.ct.practice;
+
 // class Accept<T>  
 // {
 // 	private T data;

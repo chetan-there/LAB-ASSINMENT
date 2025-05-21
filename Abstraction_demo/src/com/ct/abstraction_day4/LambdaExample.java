@@ -1,4 +1,4 @@
-package com.ct.lambda_ecpression_4april;
+package com.ct.abstraction_day4;
 
 // Functional interface with different data types
 interface IntOperation {

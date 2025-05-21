@@ -1,4 +1,4 @@
-package com.ct.abstract_1April_2;
+package com.ct.abstraction_day2;
 
 public class Dog extends Animal{
 

@@ -1,4 +1,4 @@
-package com.ct.abstract_2April_3;
+package com.ct.abstraction_day3;
 
 public class DigitalProduct extends Product {
     private String licenseKey;

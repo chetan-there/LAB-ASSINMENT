@@ -1,4 +1,4 @@
-package com.ct.abstract_2April_3;
+package com.ct.abstraction_day3;
 import java.util.Scanner;
 
 public class ProductStore {
