@@ -1,4 +1,4 @@
-package com.ct.may15;
+package com.ct.Array_day1;
 
 import java.util.Scanner;
 
