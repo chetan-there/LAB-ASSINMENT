@@ -1,4 +1,4 @@
-package com.ct.collection_day4;
+package com.ct.collection_day4.task1;
 
 class Employee {
     private String name;

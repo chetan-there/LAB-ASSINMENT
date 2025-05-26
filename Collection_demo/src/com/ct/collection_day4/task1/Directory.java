@@ -1,4 +1,4 @@
-package com.ct.collection_day4;
+package com.ct.collection_day4.task1;
 
 import java.util.ArrayList;
 
