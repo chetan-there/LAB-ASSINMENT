@@ -1,3 +1,6 @@
+package com.ct.day6;
+
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
