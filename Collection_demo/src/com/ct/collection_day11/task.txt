@@ -1,0 +1,68 @@
+Que-1
+____________________________
+Create a Java program that uses a PriorityQueue to manage a collection of strings. 
+You need to implement the following functionality:
+
+Initialize a PriorityQueue that stores strings.
+Add five different colors ("Red", "Green", "Orange", "White", "Black") to the queue.
+Print all elements of the priority queue.
+
+Requirements:
+--------------------
+Your program should use the PriorityQueue class from the java.util package.
+The elements should be added in the specified order: "Red", "Green", "Orange", "White", "Black".
+Display the elements of the PriorityQueue after all elements have been added.
+-------------------------------------------------------------------------------------------------------
+Que-2
+____________________________
+Create a Java program that demonstrates how to merge two PriorityQueue instances. 
+The program should perform the following tasks:
+
+Initialize two PriorityQueue objects, queue1 and queue2, each storing strings.
+Add three different colors to queue1: "Red", "Green", and "Orange".
+Add three different colors to queue2: "Pink", "White", and "Black".
+Print the elements of both queue1 and queue2.
+Merge queue2 into queue1 using the addAll method.
+Print the elements of the merged queue1.
+
+Requirements:
+---------------------
+Your program should use the PriorityQueue class from the java.util package.
+The elements should be added in the specified order to each queue.
+Display the elements of both priority queues before and after merging.
+The final output should show the contents of queue1 after merging queue2 into it.
+
+Sample Output:
+Priority Queue1: [Green, Red, Orange]
+Priority Queue2: [Black, White, Pink]
+New Priority Queue1: [Black, Green, Orange, Red, White, Pink]
+-------------------------------------------------------------------------------------------------------
+Que-3
+____________________________
+Problem Statement:
+
+Create a Java program that performs the following tasks:
+
+Initialize two PriorityQueue objects, pq1 and pq2, each storing strings.
+Add four different colors to pq1: "Red", "Green", "Black", and "White".
+Add four different colors to pq2: "Red", "Pink", "Black", and "Orange".
+Print the elements of both pq1 and pq2.
+Compare the elements of pq1 with the elements of pq2 and 
+print "Yes" if an element of pq1 is present in pq2, otherwise print "No".
+
+Requirements:
+---------------------
+Your program should use the PriorityQueue class from the java.util package.
+The elements should be added in the specified order to each queue.
+Display the elements of both priority queues before the comparison.
+For each element in pq1, check if it exists in pq2 and print "Yes" if it does, otherwise print "No".
+
+Sample Output:
+
+First Priority Queue: [Black, Green, Red, White]
+Second Priority Queue: [Black, Orange, Pink, Red]
+Yes
+No
+Yes
+No
+------------------------------------------------------------------------------------------------------
